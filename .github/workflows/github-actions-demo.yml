@@ -8,19 +8,30 @@ on:
 
 jobs:
   Explore-GitHub-Actions:
-    if: ${{ github.actor == 'anwarMZ' }}  # Run only if the actor is 'specific-username'
+    if: ${{ github.actor == 'specific-username' }}  # Run only if the actor is 'specific-username'
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout repository code
         uses: actions/checkout@v3
+        with:
+          fetch-depth: 2  # Fetch the last two commits to ensure access to the previous commit
 
       - name: Display changed files
         run: |
           echo "Files changed in this push:"
-          git diff --name-only ${{ github.event.before }} ${{ github.sha }} | grep 'data/literature/NC_045512/'
+          if [ "${{ github.event.before }}" != "0000000000000000000000000000000000000000" ]; then
+            git diff --name-only ${{ github.event.before }} ${{ github.sha }} | grep 'data/literature/NC_045512/'
+          else
+            echo "This is the first commit on a new branch."
+          fi
 
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
       - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
       - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
+      - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
+      - run: echo "🖥️ The workflow is now ready to test your code on the runner."
+      - name: List files in the repository
+        run: |
+          ls ${{ github.workspace }}
       - run: echo "🍏 This job’s status is ${{ job.status }}."
