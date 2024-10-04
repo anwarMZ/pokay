@@ -3,3 +3,6 @@
 # of the active site pocket.
 # Davis et al. (2021) https://doi.org/10.1101/2021.04.09.439169 [Preprint (BioRxiv); Now published at: https://doi.org/10.1128/mbio.02094-21]
 C300S
+
+# test
+C300G
