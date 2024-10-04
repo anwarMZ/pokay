@@ -25,14 +25,11 @@ jobs:
       - name: Pull pandas 1.4.3 Docker image
         run: docker pull python:3.9-slim  # Using a slim Python image to install pandas 1.4.3
 
-      - name: Install pandas 1.4.3 in the container
-        run: docker run --rm python:3.9-slim pip install pandas==1.4.3
-
       - name: Run functional_annotation.py script
         if: success()  # Only run if files in the directory were found
         run: |
           docker run --rm \
-            -v ${{ github.workspace }}:/workspace \  # Mount the repo to /workspace in container
+            -v ${{ github.workspace }}:/workspace \
             python:3.9-slim bash -c "pip install pandas==1.4.3 && \
             python /workspace/scripts/functional_annotation.py \
               --inputdir /workspace/data/literature/NC_045512/ \
