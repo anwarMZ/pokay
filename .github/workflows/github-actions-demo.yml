@@ -17,9 +17,6 @@ jobs:
         with:
           fetch-depth: 2  # Fetch the last two commits to ensure access to the previous commit
 
-      - name: Debug Actor
-        run: echo "The actor who triggered this event is ${{ github.actor }}"
-
       - name: Display changed files
         run: |
           echo "Files changed in this push:"
@@ -27,7 +24,7 @@ jobs:
             git diff --name-only ${{ github.event.before }} ${{ github.sha }} | grep 'data/literature/NC_045512/' || echo "No files changed in this directory."
           else
             echo "This is the first commit on a new branch."
-      
+
       - name: Pull pandas 1.4.3 Docker image
         run: docker pull python:3.9-slim  # Using a slim Python image to install pandas 1.4.3
 
