@@ -1,3 +1,5 @@
+import pandas as pd
+
 def unnest_multi(df, columns, reset_index=False):
 # expands out columns of lists into 1d, as well as
 # duplicating other non-specified rows as needed.
