@@ -26,7 +26,6 @@ jobs:
         run: docker pull python:3.9-slim  # Using a slim Python image to install pandas 1.4.3
 
       - name: Run functional_annotation.py script
-        if: success()  # Only run if files in the directory were found
         run: |
           docker run --rm \
             -v ${{ github.workspace }}:/workspace \
@@ -36,6 +35,17 @@ jobs:
               --accession NC_045512.2 \
               --outputfile /workspace/NC_045512_pokay.tsv \
               --gene_positions /workspace/data/json/NC_045512.json"
+
+      - name: Commit and push the output file
+        run: |
+          git config --global user.name "GitHub Actions Bot"
+          git config --global user.email "actions@github.com"
+          git add tsv/NC_045512_pokay.tsv
+          git commit -m "Add updated NC_045512_pokay.tsv"
+          git push
+        env:
+          # This is required because GitHub Actions uses a token to push commits
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
       - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
