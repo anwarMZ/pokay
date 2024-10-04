@@ -8,7 +8,7 @@ on:
 
 jobs:
   Explore-GitHub-Actions:
-    if: ${{ github.actor == 'anwarMZ' }}  # Run only if the actor is 'specific-username'
+    if: ${{ github.actor == 'anwarMZ' }}  # Run only if the actor is 'anwarMZ'
     runs-on: ubuntu-latest
 
     steps:
@@ -17,14 +17,33 @@ jobs:
         with:
           fetch-depth: 2  # Fetch the last two commits to ensure access to the previous commit
 
+      - name: Debug Actor
+        run: echo "The actor who triggered this event is ${{ github.actor }}"
+
       - name: Display changed files
         run: |
           echo "Files changed in this push:"
           if [ "${{ github.event.before }}" != "0000000000000000000000000000000000000000" ]; then
-            git diff --name-only ${{ github.event.before }} ${{ github.sha }} | grep 'data/literature/NC_045512/'
+            git diff --name-only ${{ github.event.before }} ${{ github.sha }} | grep 'data/literature/NC_045512/' || echo "No files changed in this directory."
           else
             echo "This is the first commit on a new branch."
-          fi
+      
+      - name: Pull pandas 1.4.3 Docker image
+        run: docker pull python:3.9-slim  # Using a slim Python image to install pandas 1.4.3
+
+      - name: Install pandas 1.4.3 in the container
+        run: docker run --rm python:3.9-slim pip install pandas==1.4.3
+
+      - name: Run functional_annotation.py script
+        run: |
+          docker run --rm \
+            -v ${{ github.workspace }}:/workspace \  # Mount the repo to /workspace in container
+            python:3.9-slim bash -c "pip install pandas==1.4.3 && \
+            python /workspace/scripts/functional_annotation.py \
+              --inputdir /workspace/data/literature/NC_045512/ \
+              --accession NC_045512.2 \
+              --outputfile /workspace/tsv/NC_045512_pokay.tsv \
+              --gene_positions /workspace/data/json/NC_045512.json"
 
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
       - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
