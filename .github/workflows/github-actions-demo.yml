@@ -34,7 +34,7 @@ jobs:
             python /workspace/scripts/functional_annotation.py \
               --inputdir /workspace/data/literature/NC_045512/ \
               --accession NC_045512.2 \
-              --outputfile /workspace/tsv/NC_045512_pokay.tsv \
+              --outputfile /workspace/NC_045512_pokay.tsv \
               --gene_positions /workspace/data/json/NC_045512.json"
 
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
