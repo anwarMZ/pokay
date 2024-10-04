@@ -22,7 +22,7 @@ jobs:
           echo "Checking if the commit includes files from 'data/literature/NC_045512/'..."
           git diff-tree --no-commit-id --name-only -r ${{ github.sha }} | grep 'data/literature/NC_045512/' || echo "No files in this directory were included in the commit."
 
-      - name: Pull pandas 1.4.3 Docker image
+      - name: Pull pandas 1.3.4 Docker image
         run: docker pull python:3.9-slim  # Using a slim Python image to install pandas 1.4.3
 
       - name: Run functional_annotation.py script
@@ -30,7 +30,7 @@ jobs:
         run: |
           docker run --rm \
             -v ${{ github.workspace }}:/workspace \
-            python:3.9-slim bash -c "pip install pandas==1.4.3 && \
+            python:3.9-slim bash -c "pip install pandas==1.3.4 && \
             python /workspace/scripts/functional_annotation.py \
               --inputdir /workspace/data/literature/NC_045512/ \
               --accession NC_045512.2 \
