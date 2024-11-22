@@ -37,6 +37,20 @@ jobs:
               --outputfile /workspace/NC_045512_pokay.tsv \
               --gene_positions /workspace/data/json/NC_045512.json"
 
+      - name: Pull Data Harmonizer Docker image
+        run: docker pull cidgoh/dataharmonizer-linkml:v0.1
+
+      - name: Validate the output file
+        run: |
+          docker run --rm \
+            -v ${{ github.workspace }}:/workspace \
+            cidgoh/dataharmonizer-linkml:v0.1 bash -c "python /usr/local/bin/dh-validate.py \
+              -s /workspace/virusmvp-dh-schema.yaml \
+              -C 'VirusMVPSARSCoV2' \
+              /workspace/NC_045512_pokay.tsv"
+        env:
+          GITHUB_WORKSPACE: ${{ github.workspace }}
+
       - name: Commit and push the output file
         run: |
           git config --global user.name "GitHub Actions Bot"
@@ -45,7 +59,6 @@ jobs:
           git commit -m "Add updated NC_045512_pokay.tsv"
           git push
         env:
-          # This is required because GitHub Actions uses a token to push commits
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - run: echo "The job was automatically triggered by a ${{ github.event_name }} event."
