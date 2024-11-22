@@ -50,16 +50,18 @@ def combination_mutation(c_mutations, c_mutation):
 
 
 def data_cleanup(dframe):
-    dframe['measured variant functional effect description'] = dframe[
-        'measured variant functional effect description'].apply(
+    dframe['variant functional effect description'] = dframe[
+        'variant functional effect description'].apply(
         lambda x: ','.join(map(str, x)))
 
-    dframe['measured variant functional effect description'] = dframe[
-        'measured variant functional effect description'].str.replace(',#', '')
-    dframe['measured variant functional effect description'] = dframe[
-        'measured variant functional effect description'].str.replace('#', '')
-    dframe['measured variant functional effect description'] = dframe[
-        'measured variant functional effect description'].str.strip()
+    dframe['variant functional effect description'] = dframe[
+        'variant functional effect description'].str.replace(',#', '')
+    dframe['variant functional effect description'] = dframe[
+        'variant functional effect description'].str.replace('#', '')
+    dframe['variant functional effect description'] = dframe[
+        'variant functional effect description'].str.replace('"', "'", regex=False)
+    dframe['variant functional effect description'] = dframe[
+        'variant functional effect description'].str.strip()
     
     #dframe['comb_mutation'] = dframe['comb_mutation'].apply(
     #    lambda x: x[1:-1])
@@ -88,7 +90,7 @@ def extract_source_citation(dframe):
     dframe['publication year'] = dframe['citation'].str.extract('.*\((.*)\).*')
     dframe['author'] = dframe['citation'].str.extract('^(.*?)et al') #.str.strip()
     dframe['peer review status'] = dframe['URL'].astype(str).str.extract('(?<=\[)(.*)')
-    dframe['URL'] = dframe['URL'].astype(str).str.extract('^(.*?)\[') #.str.strip()
+    dframe['URL'] = dframe['URL'].astype(str).str.split(expand=True)[0] 
     dframe['DOI'] = dframe['URL'].astype(str).str.extract('(?<=doi.org/)(.*)') #.str.strip()
 
     return dframe
@@ -149,7 +151,7 @@ def extract_metadata(inp_file, chunk, df):
                 del function[chunk[url[index_url - 1]]]
 
         df_func = pd.DataFrame(function.items(), columns=['url',
-                                                          'measured variant functional effect description'])
+                                                          'variant functional effect description'])
 
         df_list = [mutation_name, gene_name,
                    function_category] #, comb_mutation, heterozygosity]
@@ -192,14 +194,14 @@ if __name__ == '__main__':
         dataFrame_cols = ['organism', 'reference accession', 'reference database name', 'nucleotide position',
 'original mutation description', 'nucleotide mutation', 'amino acid mutation', 'amino acid mutation alias',
 'gene name', 'gene symbol', 'gene orientation', 'strand orientation', 'protein name', 'protein symbol', 'measured variant functional effect', 'inferred variant functional effect', 'viral life cycle functional effect',
-'measured variant functional effect description', 'CVX code', 'DrugBank Accession Number', 'Antibody Registry ID', 'author', 'publication year', 'URL', 'DOI', 'PMID',
+'variant functional effect description', 'CVX code', 'DrugBank Accession Number', 'Antibody Registry ID', 'author', 'publication year', 'URL', 'DOI', 'PMID',
 'peer review status', 'curator', 'mutation functional annotation resource']
     
     else:
         dataFrame_cols = ['organism', 'reference accession', 'reference database name', 'nucleotide position',
 'original mutation description', 'nucleotide mutation', 'amino acid mutation', 'amino acid mutation alias',
 'gene name', 'gene symbol', 'protein name', 'protein symbol', 'measured variant functional effect', 'inferred variant functional effect', 'viral life cycle functional effect',
-'measured variant functional effect description', 'CVX code', 'DrugBank Accession Number', 'Antibody Registry ID', 'author', 'publication year', 'URL', 'DOI', 'PMID',
+'variant functional effect description', 'CVX code', 'DrugBank Accession Number', 'Antibody Registry ID', 'author', 'publication year', 'URL', 'DOI', 'PMID',
 'peer review status', 'curator', 'mutation functional annotation resource']
     
     dataFrame = pd.DataFrame(columns=dataFrame_cols)
@@ -292,17 +294,43 @@ if __name__ == '__main__':
                         dataFrame.loc[dataFrame["pokay_id"]==pokay_id, "gene orientation"] = gene_orientation
                         dataFrame.loc[dataFrame["pokay_id"]==pokay_id, "strand orientation"] = strand_orientation
 
-                # If a CDS record matches pokay_id, get 'protein_name' and 'protein_symbol'
-                if GENE_PROTEIN_POSITIONS_DICT[entry]["type"]=="CDS" and ("gene" in GENE_PROTEIN_POSITIONS_DICT[entry].keys()) and GENE_PROTEIN_POSITIONS_DICT[entry]["gene"]==pokay_id:
-                    # extract protein names and symbols (ontology) from JSON entry
-                    protein_name = GENE_PROTEIN_POSITIONS_DICT[entry]["protein_name"]["label"]
-                    protein_symbol = GENE_PROTEIN_POSITIONS_DICT[entry]["protein_symbol"]["label"]
-                    # add protein names and symbols to dataframe
-                    dataFrame.loc[dataFrame["pokay_id"]==pokay_id, "protein name"] = protein_name
-                    dataFrame.loc[dataFrame["pokay_id"]==pokay_id, "protein symbol"] = protein_symbol
+                # If a CDS record matches pokay_id in 'gene' or 'protein_alias', get 'protein_name' and 'protein_symbol'
+                if GENE_PROTEIN_POSITIONS_DICT[entry]["type"]=="CDS" and ("gene" in GENE_PROTEIN_POSITIONS_DICT[entry].keys()):
+                    if (GENE_PROTEIN_POSITIONS_DICT[entry]["gene"]==pokay_id):
+                        # extract protein names and symbols (ontology) from JSON entry
+                        protein_name = GENE_PROTEIN_POSITIONS_DICT[entry]["protein_name"]["label"]
+                        protein_symbol = GENE_PROTEIN_POSITIONS_DICT[entry]["protein_symbol"]["label"]
+                        # add protein names and symbols to dataframe
+                        dataFrame.loc[dataFrame["pokay_id"]==pokay_id, "protein name"] = protein_name
+                        dataFrame.loc[dataFrame["pokay_id"]==pokay_id, "protein symbol"] = protein_symbol
+                    elif (pokay_id in GENE_PROTEIN_POSITIONS_DICT[entry]["protein_alias"]):
+                        gene = GENE_PROTEIN_POSITIONS_DICT[entry]["gene"]
+                        # extract protein names and symbols (ontology) from JSON entry
+                        protein_name = GENE_PROTEIN_POSITIONS_DICT[entry]["protein_name"]["label"]
+                        protein_symbol = GENE_PROTEIN_POSITIONS_DICT[entry]["protein_symbol"]["label"]
+                        # add protein names and symbols to dataframe
+                        dataFrame.loc[dataFrame["pokay_id"]==pokay_id, "protein name"] = protein_name
+                        dataFrame.loc[dataFrame["pokay_id"]==pokay_id, "protein symbol"] = protein_symbol
+                        # get 'gene_name' and 'gene_symbol'
+                        for entry in GENE_PROTEIN_POSITIONS_DICT.keys():
+                            if GENE_PROTEIN_POSITIONS_DICT[entry]["type"]=="gene" and ("gene" in GENE_PROTEIN_POSITIONS_DICT[entry].keys()) and GENE_PROTEIN_POSITIONS_DICT[entry]["gene"]==gene:
+                                # extract protein names and symbols (ontology) from JSON entry
+                                gene_name = GENE_PROTEIN_POSITIONS_DICT[entry]["gene_name"]["label"]
+                                gene_symbol = GENE_PROTEIN_POSITIONS_DICT[entry]["gene_symbol"]["label"]
+                                gene_orientation = GENE_PROTEIN_POSITIONS_DICT[entry]["gene_orientation"]["label"]
+                                strand_orientation = GENE_PROTEIN_POSITIONS_DICT[entry]["strand_orientation"]["label"]
+                                # add gene names and symbols to dataframe
+                                dataFrame.loc[dataFrame["pokay_id"]==pokay_id, "gene name"] = gene_name
+                                dataFrame.loc[dataFrame["pokay_id"]==pokay_id, "gene symbol"] = gene_symbol
+                                dataFrame.loc[dataFrame["pokay_id"]==pokay_id, "gene"] = GENE_PROTEIN_POSITIONS_DICT[entry]["gene"]
+                                if args.accession=='NC_063383.1': # add gene orientation and strand orientation for MPOX
+                                    dataFrame.loc[dataFrame["pokay_id"]==pokay_id, "gene orientation"] = gene_orientation
+                                    dataFrame.loc[dataFrame["pokay_id"]==pokay_id, "strand orientation"] = strand_orientation
+
 
                 # If a mature peptide record matches pokay_id in the 'protein_alias' list, get name of parent, and from there get names and symbols
-                if GENE_PROTEIN_POSITIONS_DICT[entry]["type"]=="mature_protein_region_of_CDS" and (pokay_id in GENE_PROTEIN_POSITIONS_DICT[entry]["protein_alias"]):
+                if (GENE_PROTEIN_POSITIONS_DICT[entry]["type"]=="mature_protein_region_of_CDS") \
+                    and (pokay_id in GENE_PROTEIN_POSITIONS_DICT[entry]["protein_alias"]):
                     # extract pokay_id, mat_pep, and parent id from JSON entry
                     mat_pep = entry
                     parent = GENE_PROTEIN_POSITIONS_DICT[entry]["Parent"]
@@ -314,16 +342,16 @@ if __name__ == '__main__':
                             dataFrame.loc[dataFrame["pokay_id"]==pokay_id, "protein name"] = parent_protein_name
                             dataFrame.loc[dataFrame["pokay_id"]==pokay_id, "protein symbol"] = parent_protein_symbol
                             parent_gene = GENE_PROTEIN_POSITIONS_DICT[entry]["gene"]
-                    # get parent gene name and symbol from corresponding parent gene entry
-                    for entry in GENE_PROTEIN_POSITIONS_DICT.keys():
-                        if GENE_PROTEIN_POSITIONS_DICT[entry]["type"]=="gene" and (GENE_PROTEIN_POSITIONS_DICT[entry]["gene"]==parent_gene):
-                            # extract gene names and symbols (ontology) from JSON entry
-                            parent_gene_name = GENE_PROTEIN_POSITIONS_DICT[entry]["gene_name"]["label"]
-                            parent_gene_symbol = GENE_PROTEIN_POSITIONS_DICT[entry]["gene_symbol"]["label"]
-                            # add gene names and symbols to dataframe
-                            dataFrame.loc[dataFrame["pokay_id"]==pokay_id, "gene name"] = parent_gene_name
-                            dataFrame.loc[dataFrame["pokay_id"]==pokay_id, "gene symbol"] = parent_gene_symbol
-                            dataFrame.loc[dataFrame["pokay_id"]==pokay_id, "gene"] = GENE_PROTEIN_POSITIONS_DICT[entry]["gene"]
+                            # get parent gene name and symbol from corresponding parent gene entry
+                            for entry in GENE_PROTEIN_POSITIONS_DICT.keys():
+                                if GENE_PROTEIN_POSITIONS_DICT[entry]["type"]=="gene" and (GENE_PROTEIN_POSITIONS_DICT[entry]["gene"]==parent_gene):
+                                    # extract gene names and symbols (ontology) from JSON entry
+                                    parent_gene_name = GENE_PROTEIN_POSITIONS_DICT[entry]["gene_name"]["label"]
+                                    parent_gene_symbol = GENE_PROTEIN_POSITIONS_DICT[entry]["gene_symbol"]["label"]
+                                    # add gene names and symbols to dataframe
+                                    dataFrame.loc[dataFrame["pokay_id"]==pokay_id, "gene name"] = parent_gene_name
+                                    dataFrame.loc[dataFrame["pokay_id"]==pokay_id, "gene symbol"] = parent_gene_symbol
+                                    dataFrame.loc[dataFrame["pokay_id"]==pokay_id, "gene"] = GENE_PROTEIN_POSITIONS_DICT[entry]["gene"]
                     # fill in mat_pep
                     dataFrame.loc[dataFrame["pokay_id"]==pokay_id, "mat_pep"] = mat_pep
 
@@ -343,12 +371,18 @@ if __name__ == '__main__':
                                                         'hgvs_aa_mutation':'amino acid mutation','hgvs_nt_mutation':'nucleotide mutation',
                                                         'hgvs_alias':'amino acid mutation alias', 'gene_symbol':'gene'})
         #print("columns", mutation_index.columns)
+        # remove index columns that don't have a nucleotide mutation entry
+        initial_length = mutation_index.shape[0]
+        mutation_index = mutation_index[mutation_index['nucleotide mutation'].notna()]
+        after_length = mutation_index.shape[0]
+        print("Removed " + str(initial_length - after_length) + "/" + str(after_length) + " mutation index rows that are missing a nucleotide mutation")
         # remove doubled columns from dataFrame
         index_cols_to_use = ['nucleotide position', 'nucleotide mutation', 'amino acid mutation', 'amino acid mutation alias']
         dataFrame = dataFrame.drop(columns=index_cols_to_use)
+        # drop duplicate rows from mutation index
+        mutation_index = mutation_index.drop_duplicates(subset=index_cols_to_use)
+        # merge
         merged_dataFrame = pd.merge(dataFrame, mutation_index, on=['original mutation description', 'gene'], how='left') #, 'mat_pep'
-        #dups = mutation_index[mutation_index.duplicated(subset=['nucleotide position', 'original mutation description'], keep=False)]
-        #dups = dups.sort_values(by='nucleotide position')
         #dups.to_csv('madeline_testing/dups.tsv', sep='\t', index=False)
 
         # keep only specified columns, discarding 'pokay_id' here
@@ -381,13 +415,16 @@ if __name__ == '__main__':
     # perform groupby and aggregation
     merged_dataFrame = merged_dataFrame.groupby(by=['index1'], as_index=False).agg(agg_dict)
 
-    #remove strings of commas in mutation name columns
+    # remove strings of commas in mutation name columns
     for column in ['nucleotide position', 'nucleotide mutation', 'amino acid mutation', 'amino acid mutation alias']:
         merged_dataFrame.loc[merged_dataFrame[column].str.contains(',,', regex=False), column] = ''
         merged_dataFrame.loc[merged_dataFrame[column]==',', column] = ''
 
     # reorder columns and drop 'index1'
     merged_dataFrame = merged_dataFrame[dataFrame_cols]
+
+    # drop duplicates
+    merged_dataFrame = merged_dataFrame.drop_duplicates()
 
     # sort by nucleotide position and reindex
     merged_dataFrame = merged_dataFrame.sort_values(by='nucleotide position')
@@ -400,4 +437,5 @@ if __name__ == '__main__':
     ###TO DO: modify dois2pmcids.sh to take the whole TSV as input and add PMIDs directly to the TSV to streamline this
     if args.save_dois != None:
         dois = merged_dataFrame[merged_dataFrame["DOI"]!=''].drop_duplicates(subset='DOI')
+        dois["DOI"] = dois["DOI"].str.replace("doi:", "", regex=False)
         dois["DOI"].to_csv(args.save_dois, header=False, index=False)
