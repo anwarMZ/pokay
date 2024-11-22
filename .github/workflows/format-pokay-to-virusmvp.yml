@@ -45,7 +45,7 @@ jobs:
           docker run --rm \
             -v ${{ github.workspace }}:/workspace \
             cidgoh/dataharmonizer-linkml:v0.1 bash -c "python /usr/local/bin/dh-validate.py \
-              -s /workspace/virusmvp-dh-schema.yaml \
+              -s /workspace/schemas/virusmvp-dh-schema.yaml \
               -C 'VirusMVPSARSCoV2' \
               /workspace/NC_045512_pokay.tsv"
         env:
