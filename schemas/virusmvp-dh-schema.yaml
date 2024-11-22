@@ -1,0 +1,3281 @@
+id: https://example.com/VIRUSMVP
+name: VIRUSMVP
+description: ''
+version: 1.0.0
+in_language:
+- en
+imports:
+- linkml:types
+prefixes:
+  linkml: https://w3id.org/linkml/
+  dcterms: http://purl.org/dc/terms/
+  GENEPIO: http://purl.obolibrary.org/obo/GENEPIO_
+  NCBITaxon: http://purl.obolibrary.org/obo/NCBITaxon_
+  OBI: http://purl.obolibrary.org/obo/OBI_
+  SIO: http://semanticscience.org/resource/SIO_
+classes:
+  dh_interface:
+    name: dh_interface
+    description: A DataHarmonizer interface
+  VirusMVPSARSCoV2:
+    name: VirusMVPSARSCoV2
+    description: Specification for VIRUS-MVP SARS-CoV-2 mutation functional impact
+      data gathering
+    is_a: dh_interface
+    slots:
+    - organism
+    - reference_accession
+    - reference_database_name
+    - nucleotide_position
+    - original_mutation_description
+    - nucleotide_mutation
+    - amino_acid_mutation
+    - amino_acid_mutation_alias
+    - gene_name
+    - gene_symbol
+    - protein_name
+    - protein_symbol
+    - measured_variant_functional_effect
+    - inferred_variant_functional_effect
+    - viral_life_cycle_functional_effect
+    - variant_functional_effect_description
+    - cvx_code
+    - drugbank_accession_number
+    - antibody_registry_id
+    - author
+    - publication_year
+    - url
+    - doi
+    - pmid
+    - peer_review_status
+    - curator
+    - mutation_functional_annotation_resource
+    slot_usage:
+      organism:
+        rank: 1
+        slot_group: reference sequence information
+        range: SARSCoV2OrganismMenu
+      reference_accession:
+        rank: 2
+        slot_group: reference sequence information
+        range: SARSCoV2ReferenceAccessionMenu
+      reference_database_name:
+        rank: 3
+        slot_group: reference sequence information
+      nucleotide_position:
+        rank: 4
+        slot_group: mutation location information
+      original_mutation_description:
+        rank: 5
+        slot_group: mutation location information
+      nucleotide_mutation:
+        rank: 6
+        slot_group: mutation location information
+      amino_acid_mutation:
+        rank: 7
+        slot_group: mutation location information
+      amino_acid_mutation_alias:
+        rank: 8
+        slot_group: mutation location information
+      gene_name:
+        rank: 9
+        slot_group: mutation location information
+        range: SARSCoV2GeneNameMenu
+      gene_symbol:
+        rank: 10
+        slot_group: mutation location information
+        range: SARSCoV2GeneSymbolMenu
+      protein_name:
+        rank: 11
+        slot_group: mutation location information
+        range: SARSCoV2ProteinNameMenu
+      protein_symbol:
+        rank: 12
+        slot_group: mutation location information
+        range: SARSCoV2ProteinSymbolMenu
+      measured_variant_functional_effect:
+        rank: 13
+        slot_group: variant functional effect information
+      inferred_variant_functional_effect:
+        rank: 14
+        slot_group: variant functional effect information
+      viral_life_cycle_functional_effect:
+        rank: 15
+        slot_group: variant functional effect information
+      variant_functional_effect_description:
+        rank: 16
+        slot_group: variant functional effect information
+      cvx_code:
+        rank: 17
+        slot_group: variant functional effect information
+      drugbank_accession_number:
+        rank: 18
+        slot_group: variant functional effect information
+      antibody_registry_id:
+        rank: 19
+        slot_group: variant functional effect information
+      author:
+        rank: 20
+        slot_group: literature citation
+      publication_year:
+        rank: 21
+        slot_group: literature citation
+      url:
+        rank: 22
+        slot_group: literature citation
+      doi:
+        rank: 23
+        slot_group: literature citation
+      pmid:
+        rank: 24
+        slot_group: literature citation
+      peer_review_status:
+        rank: 25
+        slot_group: literature citation
+      curator:
+        rank: 26
+        slot_group: contributor acknowledgement
+      mutation_functional_annotation_resource:
+        rank: 27
+        slot_group: contributor acknowledgement
+  VirusMVPMpox:
+    name: VirusMVPMpox
+    description: Specification for VIRUS-MVP MPOX mutation functional impact data
+      gathering
+    is_a: dh_interface
+    slots:
+    - organism
+    - reference_accession
+    - reference_database_name
+    - nucleotide_position
+    - original_mutation_description
+    - nucleotide_mutation
+    - amino_acid_mutation
+    - gene_name
+    - gene_symbol
+    - gene_orientation
+    - strand_orientation
+    - protein_name
+    - protein_symbol
+    - measured_variant_functional_effect
+    - inferred_variant_functional_effect
+    - viral_life_cycle_functional_effect
+    - variant_functional_effect_description
+    - cvx_code
+    - drugbank_accession_number
+    - antibody_registry_id
+    - author
+    - publication_year
+    - url
+    - doi
+    - pmid
+    - peer_review_status
+    - curator
+    - mutation_functional_annotation_resource
+    slot_usage:
+      organism:
+        rank: 1
+        slot_group: reference sequence information
+        range: MPOXOrganismMenu
+      reference_accession:
+        rank: 2
+        slot_group: reference sequence information
+        any_of:
+        - range: MPOXReferenceAccessionMenu
+        - range: NullValueMenu
+      reference_database_name:
+        rank: 3
+        slot_group: reference sequence information
+      nucleotide_position:
+        rank: 4
+        slot_group: mutation location information
+      original_mutation_description:
+        rank: 5
+        slot_group: mutation location information
+      nucleotide_mutation:
+        rank: 6
+        slot_group: mutation location information
+      amino_acid_mutation:
+        rank: 7
+        slot_group: mutation location information
+      gene_name:
+        rank: 8
+        slot_group: mutation location information
+        range: MPOXGeneNameMenu
+      gene_symbol:
+        rank: 9
+        slot_group: mutation location information
+        range: MPOXGeneSymbolMenu
+      gene_orientation:
+        rank: 10
+        slot_group: mutation location information
+      strand_orientation:
+        rank: 11
+        slot_group: mutation location information
+      protein_name:
+        rank: 12
+        slot_group: mutation location information
+        range: MPOXProteinNameMenu
+      protein_symbol:
+        rank: 13
+        slot_group: mutation location information
+        range: MPOXProteinSymbolMenu
+      measured_variant_functional_effect:
+        rank: 14
+        slot_group: variant functional effect information
+      inferred_variant_functional_effect:
+        rank: 15
+        slot_group: variant functional effect information
+      viral_life_cycle_functional_effect:
+        rank: 16
+        slot_group: variant functional effect information
+      variant_functional_effect_description:
+        rank: 17
+        slot_group: variant functional effect information
+      cvx_code:
+        rank: 18
+        slot_group: variant functional effect information
+      drugbank_accession_number:
+        rank: 19
+        slot_group: variant functional effect information
+      antibody_registry_id:
+        rank: 20
+        slot_group: variant functional effect information
+      author:
+        rank: 21
+        slot_group: literature citation
+      publication_year:
+        rank: 22
+        slot_group: literature citation
+      url:
+        rank: 23
+        slot_group: literature citation
+      doi:
+        rank: 24
+        slot_group: literature citation
+      pmid:
+        rank: 25
+        slot_group: literature citation
+      peer_review_status:
+        rank: 26
+        slot_group: literature citation
+      curator:
+        rank: 27
+        slot_group: contributor acknowledgement
+      mutation_functional_annotation_resource:
+        rank: 28
+        slot_group: contributor acknowledgement
+slots:
+  organism:
+    name: organism
+    title: organism
+    description: The virus being analyzed.
+    slot_uri: OBI:0100026
+    required: true
+    examples:
+    - value: Severe acute respiratory syndrome coronavirus 2
+  reference_accession:
+    name: reference_accession
+    title: reference accession
+    description: An identifier that specifies an individual sequence record in a public
+      sequence repository.
+    comments: Use the versioned accession number here.
+    slot_uri: OBI:0002885
+    required: true
+    examples:
+    - value: NC_045512.2
+  reference_database_name:
+    name: reference_database_name
+    title: reference database name
+    description: An identifier of a biological or bioinformatics database.
+    comments: The name of the reference database may need to be entered manually if
+      not automatically recorded as a parameter within the tool.
+    slot_uri: OBI:0002883
+    range: ReferenceDatabaseMenu
+    required: true
+    examples:
+    - value: RefSeq
+  nucleotide_position:
+    name: nucleotide_position
+    title: nucleotide position
+    description: A sequence datum which is the 1-based start position of a sequence
+      feature for a given nucleotide sequence.
+    slot_uri: GENEPIO:0101033
+    range: string
+    minimum_value: 1
+    required: true
+    examples:
+    - value: '351'
+  original_mutation_description:
+    name: original_mutation_description
+    title: original mutation description
+    description: A sequence datum which describes a mutation, written in the user's
+      own notation.
+    slot_uri: GENEPIO:0101030
+    range: string
+    required: true
+    examples:
+    - value: D614G, 12-bp deletion in E at nucleotide position 54647, D to G substitution
+        at amino acid 614
+  nucleotide_mutation:
+    name: nucleotide_mutation
+    title: nucleotide mutation
+    description: A sequence datum which describes a nucleotide sequence change as
+      compared to a reference sequence, represented by a specified notation system.
+    comments: Use HGVS syntax; c. (coding) g.(genomic), or r. (ribosomal) mutations
+      should be included here.
+    slot_uri: GENEPIO:0100402
+    range: WhitespaceMinimizedString
+    recommended: true
+    examples:
+    - value: NC_045512.2:c.1850_1851insGT
+  amino_acid_mutation:
+    name: amino_acid_mutation
+    title: amino acid mutation
+    description: A sequence datum which describes an amino acid sequence change as
+      compared to a reference sequence, represented by a specified notation system.
+    comments: Use HGVS syntax; p. (protein) mutations should be included here; use
+      3 letter code preferred for amino acids.
+    slot_uri: GENEPIO:0100406
+    range: WhitespaceMinimizedString
+    required: true
+    examples:
+    - value: YP_009724390.1:p.Cys3563Ser, YP_009724390.1:p.Asp614Gly
+  amino_acid_mutation_alias:
+    name: amino_acid_mutation_alias
+    title: amino acid mutation alias
+    description: For SARS-CoV-2. The alias is an amino acid name indexed from the
+      start of each nsp in Orf1ab, as opposed to from the start of the gene as is
+      the default.
+    comments: Use HGVS syntax; p. (protein) mutations should be included here; use
+      3 letter code preferred for amino acids.
+    slot_uri: GENEPIO:0100406
+    range: WhitespaceMinimizedString
+    examples:
+    - value: YP_009724390.1:p.Cys300Ser
+  gene_name:
+    name: gene_name
+    title: gene name
+    description: The name of a gene, (typically) assigned by a person and/or according
+      to a naming scheme. It may contain white space characters and is typically more
+      intuitive and readable than a gene symbol. It (typically) may be used to identify
+      similar genes in different species and to derive a gene symbol.
+    slot_uri: GENEPIO:0101130
+    required: true
+    examples:
+    - value: surface glycoprotein gene (SARS-CoV-2)
+  gene_symbol:
+    name: gene_symbol
+    title: gene symbol
+    description: The short name of a gene; a single word that does not contain white
+      space characters. It is typically derived from the gene name.
+    slot_uri: GENEPIO:0101131
+    required: true
+    examples:
+    - value: s gene (SARS-CoV-2)
+  protein_name:
+    name: protein_name
+    title: protein name
+    description: The name of a protein, (typically) assigned by a person and/or according
+      to a naming scheme. It may contain white space characters and is typically more
+      intuitive and readable than a protein symbol. It (typically) may be used to
+      identify similar proteins in different species and to derive a protein symbol.
+    slot_uri: GENEPIO:0101132
+    required: true
+    examples:
+    - value: surface glycoprotein (SARS-CoV-2)
+  protein_symbol:
+    name: protein_symbol
+    title: protein symbol
+    description: The short name of a protein; a single word that does not contain
+      white space characters. It is typically derived from the protein name.
+    slot_uri: GENEPIO:0101133
+    required: true
+    examples:
+    - value: S protein (SARS-CoV-2)
+  gene_orientation:
+    name: gene_orientation
+    title: gene orientation
+    description: A genomic orientation which is the orientation of a gene on a stranded
+      molecule.
+    slot_uri: GENEPIO:0700000
+    range: GeneOrientationMenu
+    required: true
+  strand_orientation:
+    name: strand_orientation
+    title: strand orientation
+    description: A genomic orientation which is the orientation of a strand on a stranded
+      molecule.
+    slot_uri: GENEPIO:0700001
+    range: StrandOrientationMenu
+    required: true
+  measured_variant_functional_effect:
+    name: measured_variant_functional_effect
+    title: measured variant functional effect
+    description: The functional category of the mutation impact that is directly measured
+      in a research study.
+    comments: Select all functional impacts that relate to the functional description.
+    slot_uri: GENEPIO:0101127
+    range: VariantFunctionalEffectMenu
+    multivalued: true
+    required: true
+    examples:
+    - value: dimerization
+  inferred_variant_functional_effect:
+    name: inferred_variant_functional_effect
+    title: inferred variant functional effect
+    description: The functional category of the mutation impact that is inferred from
+      a direct measurement in a research study.
+    comments: Select all functional impacts that relate to the functional description.
+    slot_uri: GENEPIO:0101127
+    range: VariantFunctionalEffectMenu
+    multivalued: true
+    recommended: true
+    examples:
+    - value: dimerization
+  viral_life_cycle_functional_effect:
+    name: viral_life_cycle_functional_effect
+    title: viral life cycle functional effect
+    description: The viral life cycle impact correlated with the mutation.
+    comments: Select all functional impacts that relate to the functional description.
+    slot_uri: GENEPIO:0101990
+    range: ViralLifeCycleMenu
+    multivalued: true
+    recommended: true
+  variant_functional_effect_description:
+    name: variant_functional_effect_description
+    title: variant functional effect description
+    description: A freetext description of the functional effect of a mutation.
+    slot_uri: GENEPIO:0101036
+    range: string
+    required: true
+    examples:
+    - value: This mutation demonstrates that glutathionylation (in vivo oxidative
+        post-translational modification of cysteine) of Mpro/NSP5 residue C300 is
+        responsible for controlling the dimerization of the protein, where the monomer's
+        protease activity is hampered by the collapsing  of the active site pocket.
+  cvx_code:
+    name: cvx_code
+    title: CVX code
+    description: 'For vaccine-related functional effects: the CVX code for the vaccine,
+      found at https://www2a.cdc.gov/vaccines/iis/iisstandards/vaccines.asp?rpt=cvx'
+    comments: Begin with "cvx:".
+    slot_uri: dbXref
+    range: string
+    examples:
+    - value: cvx:519
+  drugbank_accession_number:
+    name: drugbank_accession_number
+    title: DrugBank Accession Number
+    description: 'For drug-related functional effects: the DrugBank Accession Number,
+      found at https://go.drugbank.com/'
+    comments: Begin with "drugbank:".
+    slot_uri: dbXref
+    range: string
+    examples:
+    - value: drugbank:DB14761
+  antibody_registry_id:
+    name: antibody_registry_id
+    title: Antibody Registry ID
+    description: 'For monoclonal antibody-related functional effects: the Antibody
+      Registry, found at https://www.antibodyregistry.org/'
+    comments: 'Use only the numerical part of the ID: 2911453, rather than AB_2911453.
+      Begin with "antibodyregistry:".'
+    slot_uri: dbXref
+    range: string
+    examples:
+    - value: antibodyregistry:2911453
+  author:
+    name: author
+    title: author
+    description: The last name of the first author of the paper or other resource
+      containing the evidence for the mutation impact.
+    comments: The surname of the publication's first author, without "et al." added.
+    slot_uri: dcterms:creator
+    range: string
+    required: true
+    examples:
+    - value: Davis
+  publication_year:
+    name: publication_year
+    title: publication year
+    description: The publication year of the evidence source.
+    slot_uri: dcterms:date
+    range: integer
+    required: true
+    examples:
+    - value: '2021'
+  url:
+    name: url
+    title: URL
+    description: A link to the literature evidence source.
+    comments: If the evidence is found in supplemental material, still link to the
+      paper itself.
+    slot_uri: dcterms:source
+    range: string
+    required: true
+    examples:
+    - value: https://www.biorxiv.org/content/10.1101/2021.01.22.427749v1
+  doi:
+    name: doi
+    title: DOI
+    description: The DOI of the literature evidence source.
+    comments: Begin with "doi:".
+    slot_uri: dbXref
+    range: string
+    recommended: true
+    examples:
+    - value: doi:10.1101/2021.01.22.427749
+  pmid:
+    name: pmid
+    title: PMID
+    description: The PMID of the literature evidence source.
+    comments: Begin with "pmid:".
+    slot_uri: dbXref
+    range: string
+    recommended: true
+    examples:
+    - value: pmid:34755213
+  peer_review_status:
+    name: peer_review_status
+    title: peer review status
+    description: 'Peer review status for the literature evidence document: true or
+      false.'
+    comments: Must be all lowercase.
+    slot_uri: SIO:001035
+    range: boolean
+    required: true
+    examples:
+    - value: 'true'
+  curator:
+    name: curator
+    title: curator
+    description: The ORCID of the curator who created the annotation record.
+    comments: If no ORCID is available, write the curator's full name here.
+    slot_uri: dcterms:contributor
+    range: string
+    required: true
+    examples:
+    - value: 0000-0002-0548-891X
+  mutation_functional_annotation_resource:
+    name: mutation_functional_annotation_resource
+    title: mutation functional annotation resource
+    description: The resource containing the functional annotation for the mutation.
+    slot_uri: dcterms:seeAlso
+    range: string
+    examples:
+    - value: Pokay, SARS-CoV-2 Harvest Variants
+enums:
+  ReferenceDatabaseMenu:
+    name: ReferenceDatabaseMenu
+    title: reference database menu
+    permissible_values:
+      RefSeq:
+        text: RefSeq
+  StrandOrientationMenu:
+    name: StrandOrientationMenu
+    title: strand orientation menu
+    permissible_values:
+      antisense strand orientation:
+        text: antisense strand orientation
+        meaning: GENEPIO:0700003
+      sense strand orientation:
+        text: sense strand orientation
+        meaning: GENEPIO:0700002
+  GeneOrientationMenu:
+    name: GeneOrientationMenu
+    title: gene orientation menu
+    permissible_values:
+      forward gene orientation:
+        text: forward gene orientation
+        meaning: GENEPIO:0700004
+      reverse gene orientation:
+        text: reverse gene orientation
+        meaning: GENEPIO:0700005
+  VariantFunctionalEffectMenu:
+    name: VariantFunctionalEffectMenu
+    title: variant functional effect menu
+    permissible_values:
+      altered binding affinity:
+        text: altered binding affinity
+        meaning: GENEPIO:0101924
+      increased binding affinity:
+        text: increased binding affinity
+        meaning: GENEPIO:0101925
+        is_a: altered binding affinity
+      decreased binding affinity:
+        text: decreased binding affinity
+        meaning: GENEPIO:0101926
+        is_a: altered binding affinity
+      altered posttranslational modification:
+        text: altered posttranslational modification
+        meaning: GENEPIO:0101893
+      increased posttranslational modification:
+        text: increased posttranslational modification
+        meaning: GENEPIO:0101927
+        is_a: altered posttranslational modification
+      decreased posttranslational modification:
+        text: decreased posttranslational modification
+        meaning: GENEPIO:0101928
+        is_a: altered posttranslational modification
+      altered dimerization:
+        text: altered dimerization
+        meaning: GENEPIO:0101894
+      increased dimerization:
+        text: increased dimerization
+        meaning: GENEPIO:0101929
+        is_a: altered dimerization
+      decreased dimerization:
+        text: decreased dimerization
+        meaning: GENEPIO:0101930
+        is_a: altered dimerization
+      altered proteolysis:
+        text: altered proteolysis
+        meaning: GENEPIO:0101895
+      increased proteolysis:
+        text: increased proteolysis
+        meaning: GENEPIO:0101931
+        is_a: altered proteolysis
+      decreased proteolysis:
+        text: decreased proteolysis
+        meaning: GENEPIO:0101932
+        is_a: altered proteolysis
+      protein conformation:
+        text: protein conformation
+        meaning: GENEPIO:0101896
+      altered host cell stress granule formation:
+        text: altered host cell stress granule formation
+        meaning: GENEPIO:0101897
+      increased host cell stress granule formation:
+        text: increased host cell stress granule formation
+        meaning: GENEPIO:0101933
+        is_a: altered host cell stress granule formation
+      decreased host cell stress granule formation:
+        text: decreased host cell stress granule formation
+        meaning: GENEPIO:0101934
+        is_a: altered host cell stress granule formation
+      altered host cell syncytium formation:
+        text: altered host cell syncytium formation
+        meaning: GENEPIO:0101898
+      increased host cell syncytium formation:
+        text: increased host cell syncytium formation
+        meaning: GENEPIO:0101935
+        is_a: altered host cell syncytium formation
+      decreased host cell syncytium formation:
+        text: decreased host cell syncytium formation
+        meaning: GENEPIO:0101936
+        is_a: altered host cell syncytium formation
+      detected in immunosuppressed host:
+        text: detected in immunosuppressed host
+        meaning: GENEPIO:0101899
+      detected in reinfected host:
+        text: detected in reinfected host
+        meaning: GENEPIO:0101900
+      host symptomaticity:
+        text: host symptomaticity
+        meaning: GENEPIO:0101901
+      host clinical indicator:
+        text: host clinical indicator
+        meaning: GENEPIO:0101902
+      altered risk:
+        text: altered risk
+        meaning: GENEPIO:0101937
+      increased risk:
+        text: increased risk
+        meaning: GENEPIO:0101938
+        is_a: altered risk
+      decreased risk:
+        text: decreased risk
+        meaning: GENEPIO:0101939
+        is_a: altered risk
+      selective pressure:
+        text: selective pressure
+        meaning: GENEPIO:0101904
+      homoplasy:
+        text: homoplasy
+        meaning: GENEPIO:0101905
+      infectious agent host range:
+        text: infectious agent host range
+        meaning: GENEPIO:0101906
+      altered detectability of infectious agent:
+        text: altered detectability of infectious agent
+        meaning: GENEPIO:0101940
+      increased detectability of infectious agent:
+        text: increased detectability of infectious agent
+        meaning: GENEPIO:0101941
+        is_a: altered detectability of infectious agent
+      decreased detectability of infectious agent:
+        text: decreased detectability of infectious agent
+        meaning: GENEPIO:0101942
+        is_a: altered detectability of infectious agent
+      altered susceptibility of infectious agent to environmental condition:
+        text: altered susceptibility of infectious agent to environmental condition
+        meaning: GENEPIO:0101943
+      increased susceptibility of infectious agent to environmental condition:
+        text: increased susceptibility of infectious agent to environmental condition
+        meaning: GENEPIO:0101944
+        is_a: altered susceptibility of infectious agent to environmental condition
+      decreased susceptibility of infectious agent to environmental condition:
+        text: decreased susceptibility of infectious agent to environmental condition
+        meaning: GENEPIO:0101945
+        is_a: altered susceptibility of infectious agent to environmental condition
+      resistance of infectious agent to environmental condition:
+        text: resistance of infectious agent to environmental condition
+        meaning: GENEPIO:0101946
+      altered susceptibility of infectious agent to temperature condition:
+        text: altered susceptibility of infectious agent to temperature condition
+        meaning: GENEPIO:0101947
+        is_a: resistance of infectious agent to environmental condition
+      increased susceptibility of infectious agent to temperature condition:
+        text: increased susceptibility of infectious agent to temperature condition
+        meaning: GENEPIO:0101948
+        is_a: altered susceptibility of infectious agent to temperature condition
+      decreased susceptibility of infectious agent to temperature condition:
+        text: decreased susceptibility of infectious agent to temperature condition
+        meaning: GENEPIO:0101949
+        is_a: altered susceptibility of infectious agent to temperature condition
+      resistance of infectious agent to temperature condition:
+        text: resistance of infectious agent to temperature condition
+        meaning: GENEPIO:0101950
+        is_a: resistance of infectious agent to environmental condition
+      altered antipathogenic agent susceptibility of infectious agent:
+        text: altered antipathogenic agent susceptibility of infectious agent
+        meaning: GENEPIO:0101951
+      increased antipathogenic agent susceptibility of infectious agent:
+        text: increased antipathogenic agent susceptibility of infectious agent
+        meaning: GENEPIO:0101952
+        is_a: altered antipathogenic agent susceptibility of infectious agent
+      decreased antipathogenic agent susceptibility of infectious agent:
+        text: decreased antipathogenic agent susceptibility of infectious agent
+        meaning: GENEPIO:0101953
+        is_a: altered antipathogenic agent susceptibility of infectious agent
+      antipathogenic agent resistance of infectious agent:
+        text: antipathogenic agent resistance of infectious agent
+        meaning: GENEPIO:0101954
+      altered therapeutic agent susceptibility of infectious agent:
+        text: altered therapeutic agent susceptibility of infectious agent
+        meaning: GENEPIO:0101955
+        is_a: antipathogenic agent resistance of infectious agent
+      increased therapeutic agent susceptibility of infectious agent:
+        text: increased therapeutic agent susceptibility of infectious agent
+        meaning: GENEPIO:0101956
+        is_a: altered therapeutic agent susceptibility of infectious agent
+      decreased therapeutic agent susceptibility of infectious agent:
+        text: decreased therapeutic agent susceptibility of infectious agent
+        meaning: GENEPIO:0101957
+        is_a: altered therapeutic agent susceptibility of infectious agent
+      therapeutic agent resistance of infectious agent:
+        text: therapeutic agent resistance of infectious agent
+        meaning: GENEPIO:0101958
+        is_a: antipathogenic agent resistance of infectious agent
+      altered monoclonal antibody susceptibility of infectious agent:
+        text: altered monoclonal antibody susceptibility of infectious agent
+        meaning: GENEPIO:0101959
+        is_a: antipathogenic agent resistance of infectious agent
+      increased monoclonal antibody susceptibility of infectious agent:
+        text: increased monoclonal antibody susceptibility of infectious agent
+        meaning: GENEPIO:0101960
+        is_a: altered monoclonal antibody susceptibility of infectious agent
+      decreased monoclonal antibody susceptibility of infectious agent:
+        text: decreased monoclonal antibody susceptibility of infectious agent
+        meaning: GENEPIO:0101961
+        is_a: altered monoclonal antibody susceptibility of infectious agent
+      monoclonal antibody resistance of infectious agent:
+        text: monoclonal antibody resistance of infectious agent
+        meaning: GENEPIO:0101962
+        is_a: antipathogenic agent resistance of infectious agent
+      altered convalescent plasma susceptibility of infectious agent:
+        text: altered convalescent plasma susceptibility of infectious agent
+        meaning: GENEPIO:0101963
+        is_a: antipathogenic agent resistance of infectious agent
+      increased convalescent plasma susceptibility of infectious agent:
+        text: increased convalescent plasma susceptibility of infectious agent
+        meaning: GENEPIO:0101964
+        is_a: altered convalescent plasma susceptibility of infectious agent
+      decreased convalescent plasma susceptibility of infectious agent:
+        text: decreased convalescent plasma susceptibility of infectious agent
+        meaning: GENEPIO:0101965
+        is_a: altered convalescent plasma susceptibility of infectious agent
+      convalescent plasma resistance of infectious agent:
+        text: convalescent plasma resistance of infectious agent
+        meaning: GENEPIO:0101966
+        is_a: antipathogenic agent resistance of infectious agent
+      altered host immune response susceptibility of infectious agent:
+        text: altered host immune response susceptibility of infectious agent
+        meaning: GENEPIO:0101967
+      increased host immune response susceptibility of infectious agent:
+        text: increased host immune response susceptibility of infectious agent
+        meaning: GENEPIO:0101968
+        is_a: altered host immune response susceptibility of infectious agent
+      decreased host immune response susceptibility of infectious agent:
+        text: decreased host immune response susceptibility of infectious agent
+        meaning: GENEPIO:0101969
+        is_a: altered host immune response susceptibility of infectious agent
+      host immune response resistance of infectious agent:
+        text: host immune response resistance of infectious agent
+        meaning: GENEPIO:0101970
+      altered host adaptive immune response susceptibility of infectious agent:
+        text: altered host adaptive immune response susceptibility of infectious agent
+        meaning: GENEPIO:0101971
+        is_a: host immune response resistance of infectious agent
+      increased host adaptive immune response susceptibility of infectious agent:
+        text: increased host adaptive immune response susceptibility of infectious
+          agent
+        meaning: GENEPIO:0101972
+        is_a: altered host adaptive immune response susceptibility of infectious agent
+      decreased host adaptive immune response susceptibility of infectious agent:
+        text: decreased host adaptive immune response susceptibility of infectious
+          agent
+        meaning: GENEPIO:0101973
+        is_a: altered host adaptive immune response susceptibility of infectious agent
+      altered cytotoxic T cell neutralization response susceptibility of infectious agent:
+        text: altered cytotoxic T cell neutralization response susceptibility of infectious
+          agent
+        meaning: GENEPIO:0101983
+        is_a: altered host adaptive immune response susceptibility of infectious agent
+      increased cytotoxic T cell neutralization response susceptibility of infectious agent:
+        text: increased cytotoxic T cell neutralization response susceptibility of
+          infectious agent
+        meaning: GENEPIO:0101984
+        is_a: altered cytotoxic T cell neutralization response susceptibility of infectious
+          agent
+      decreased cytotoxic T cell neutralization response susceptibility of infectious agent:
+        text: decreased cytotoxic T cell neutralization response susceptibility of
+          infectious agent
+        meaning: GENEPIO:0101985
+        is_a: altered cytotoxic T cell neutralization response susceptibility of infectious
+          agent
+      cytotoxic T cell neutralization response resistance of infectious agent:
+        text: cytotoxic T cell neutralization response resistance of infectious agent
+        meaning: GENEPIO:0101986
+        is_a: altered host adaptive immune response susceptibility of infectious agent
+      host adaptive immune response resistance of infectious agent:
+        text: host adaptive immune response resistance of infectious agent
+        meaning: GENEPIO:0101974
+        is_a: host immune response resistance of infectious agent
+      altered host innate immune response susceptibility of infectious agent:
+        text: altered host innate immune response susceptibility of infectious agent
+        meaning: GENEPIO:0101975
+        is_a: host immune response resistance of infectious agent
+      increased host innate immune response susceptibility of infectious agent:
+        text: increased host innate immune response susceptibility of infectious agent
+        meaning: GENEPIO:0101976
+        is_a: altered host innate immune response susceptibility of infectious agent
+      decreased host innate immune response susceptibility of infectious agent:
+        text: decreased host innate immune response susceptibility of infectious agent
+        meaning: GENEPIO:0101977
+        is_a: altered host innate immune response susceptibility of infectious agent
+      host innate immune response resistance of infectious agent:
+        text: host innate immune response resistance of infectious agent
+        meaning: GENEPIO:0101978
+        is_a: host immune response resistance of infectious agent
+      altered Type I interferon activation response susceptibility of infectious agent:
+        text: altered Type I interferon activation response susceptibility of infectious
+          agent
+        meaning: GENEPIO:0101979
+        is_a: host innate immune response resistance of infectious agent
+      increased Type I interferon activation response susceptibility of infectious agent:
+        text: increased Type I interferon activation response susceptibility of infectious
+          agent
+        meaning: GENEPIO:0101980
+        is_a: altered Type I interferon activation response susceptibility of infectious
+          agent
+      decreased Type I interferon activation response susceptibility of infectious agent:
+        text: decreased Type I interferon activation response susceptibility of infectious
+          agent
+        meaning: GENEPIO:0101981
+        is_a: altered Type I interferon activation response susceptibility of infectious
+          agent
+      Type I interferon activation response resistance of infectious agent:
+        text: Type I interferon activation response resistance of infectious agent
+        meaning: GENEPIO:0101982
+        is_a: host innate immune response resistance of infectious agent
+      altered viral load:
+        text: altered viral load
+        meaning: GENEPIO:0101987
+      increased viral load:
+        text: increased viral load
+        meaning: GENEPIO:0101988
+        is_a: altered viral load
+      decreased viral load:
+        text: decreased viral load
+        meaning: GENEPIO:0101989
+        is_a: altered viral load
+      altered infectious agent transmissibility:
+        text: altered infectious agent transmissibility
+        meaning: GENEPIO:0102015
+      increased infectious agent transmissibility:
+        text: increased infectious agent transmissibility
+        meaning: GENEPIO:0102016
+        is_a: altered infectious agent transmissibility
+      decreased infectious agent transmissibility:
+        text: decreased infectious agent transmissibility
+        meaning: GENEPIO:0102017
+        is_a: altered infectious agent transmissibility
+      altered drug susceptibility of infectious agent:
+        text: altered drug susceptibility of infectious agent
+        meaning: GENEPIO:0102018
+      increased drug susceptibility of infectious agent:
+        text: increased drug susceptibility of infectious agent
+        meaning: GENEPIO:0102019
+        is_a: altered drug susceptibility of infectious agent
+      decreased drug susceptibility of infectious agent:
+        text: decreased drug susceptibility of infectious agent
+        meaning: GENEPIO:0102020
+        is_a: altered drug susceptibility of infectious agent
+      altered infectivity:
+        text: altered infectivity
+        meaning: GENEPIO:0102021
+      increased infectivity:
+        text: increased infectivity
+        meaning: GENEPIO:0102022
+        is_a: altered infectivity
+      decreased infectivity:
+        text: decreased infectivity
+        meaning: GENEPIO:0102023
+        is_a: altered infectivity
+      altered macromolecular stability:
+        text: altered macromolecular stability
+        meaning: GENEPIO:0102024
+      increased macromolecular stability:
+        text: increased macromolecular stability
+        meaning: GENEPIO:0102025
+        is_a: altered macromolecular stability
+      decreased macromolecular stability:
+        text: decreased macromolecular stability
+        meaning: GENEPIO:0102026
+        is_a: altered macromolecular stability
+  ViralLifeCycleMenu:
+    name: ViralLifeCycleMenu
+    title: ''
+    permissible_values:
+      altered intracellular transport of virus:
+        text: altered intracellular transport of virus
+        meaning: GENEPIO:0101991
+      increased intracellular transport of virus:
+        text: increased intracellular transport of virus
+        meaning: GENEPIO:0101992
+        is_a: altered intracellular transport of virus
+      decreased intracellular transport of virus:
+        text: decreased intracellular transport of virus
+        meaning: GENEPIO:0101993
+        is_a: altered intracellular transport of virus
+      altered symbiont entry into host cell:
+        text: altered symbiont entry into host cell
+        meaning: GENEPIO:0101994
+      increased symbiont entry into host cell:
+        text: increased symbiont entry into host cell
+        meaning: GENEPIO:0101995
+        is_a: altered symbiont entry into host cell
+      decreased symbiont entry into host cell:
+        text: decreased symbiont entry into host cell
+        meaning: GENEPIO:0101996
+        is_a: altered symbiont entry into host cell
+      altered viral genome integration into host DNA:
+        text: altered viral genome integration into host DNA
+        meaning: GENEPIO:0101997
+      increased viral genome integration into host DNA:
+        text: increased viral genome integration into host DNA
+        meaning: GENEPIO:0101998
+        is_a: altered viral genome integration into host DNA
+      decreased viral genome integration into host DNA:
+        text: decreased viral genome integration into host DNA
+        meaning: GENEPIO:0101999
+        is_a: altered viral genome integration into host DNA
+      altered viral genome replication:
+        text: altered viral genome replication
+        meaning: GENEPIO:0102000
+      increased viral genome replication:
+        text: increased viral genome replication
+        meaning: GENEPIO:0102001
+        is_a: altered viral genome replication
+      decreased viral genome replication:
+        text: decreased viral genome replication
+        meaning: GENEPIO:0102002
+        is_a: altered viral genome replication
+      altered viral release from host cell:
+        text: altered viral release from host cell
+        meaning: GENEPIO:0102003
+      increased viral release from host cell:
+        text: increased viral release from host cell
+        meaning: GENEPIO:0102004
+        is_a: altered viral release from host cell
+      decreased viral release from host cell:
+        text: decreased viral release from host cell
+        meaning: GENEPIO:0102005
+        is_a: altered viral release from host cell
+      altered virion assembly:
+        text: altered virion assembly
+        meaning: GENEPIO:0102006
+      increased virion assembly:
+        text: increased virion assembly
+        meaning: GENEPIO:0102007
+        is_a: altered virion assembly
+      decreased virion assembly:
+        text: decreased virion assembly
+        meaning: GENEPIO:0102008
+        is_a: altered virion assembly
+      altered virion attachment to host cell:
+        text: altered virion attachment to host cell
+        meaning: GENEPIO:0102009
+      increased virion attachment to host cell:
+        text: increased virion attachment to host cell
+        meaning: GENEPIO:0102010
+        is_a: altered virion attachment to host cell
+      decreased virion attachment to host cell:
+        text: decreased virion attachment to host cell
+        meaning: GENEPIO:0102011
+        is_a: altered virion attachment to host cell
+      altered virus maturation:
+        text: altered virus maturation
+        meaning: GENEPIO:0102012
+      increased virus maturation:
+        text: increased virus maturation
+        meaning: GENEPIO:0102013
+        is_a: altered virus maturation
+      decreased virus maturation:
+        text: decreased virus maturation
+        meaning: GENEPIO:0102014
+        is_a: altered virus maturation
+  SARSCoV2OrganismMenu:
+    name: SARSCoV2OrganismMenu
+    title: SARS-CoV-2 organism menu
+    permissible_values:
+      Severe acute respiratory syndrome coronavirus 2:
+        text: Severe acute respiratory syndrome coronavirus 2
+        meaning: NCBITaxon:2697049
+  SARSCoV2ReferenceAccessionMenu:
+    name: SARSCoV2ReferenceAccessionMenu
+    title: SARS-CoV-2 reference accession menu
+    permissible_values:
+      NC_045512.2:
+        text: NC_045512.2
+  SARSCoV2GeneNameMenu:
+    name: SARSCoV2GeneNameMenu
+    title: SARS-CoV-2 gene name menu
+    permissible_values:
+      open reading frame 1ab polyprotein gene (SARS-CoV-2):
+        text: open reading frame 1ab polyprotein gene (SARS-CoV-2)
+        meaning: GENEPIO:0101134
+      open reading frame 1a polyprotein gene (SARS-CoV-2):
+        text: open reading frame 1a polyprotein gene (SARS-CoV-2)
+        meaning: GENEPIO:0101138
+      surface glycoprotein gene (SARS-CoV-2):
+        text: surface glycoprotein gene (SARS-CoV-2)
+        meaning: GENEPIO:0101142
+      open reading frame 3a gene (SARS-CoV-2):
+        text: open reading frame 3a gene (SARS-CoV-2)
+        meaning: GENEPIO:0101146
+      envelope gene (SARS-CoV-2):
+        text: envelope gene (SARS-CoV-2)
+        meaning: GENEPIO:0101150
+      membrane glycoprotein gene (SARS-CoV-2):
+        text: membrane glycoprotein gene (SARS-CoV-2)
+        meaning: GENEPIO:0101154
+      open reading frame 6 gene (SARS-CoV-2):
+        text: open reading frame 6 gene (SARS-CoV-2)
+        meaning: GENEPIO:0101158
+      open reading frame 7a gene (SARS-CoV-2):
+        text: open reading frame 7a gene (SARS-CoV-2)
+        meaning: GENEPIO:0101162
+      open reading frame 7b gene (SARS-CoV-2):
+        text: open reading frame 7b gene (SARS-CoV-2)
+        meaning: GENEPIO:0101166
+      open reading frame 8 gene (SARS-CoV-2):
+        text: open reading frame 8 gene (SARS-CoV-2)
+        meaning: GENEPIO:0101170
+      nucleocapsid phosphoprotein gene (SARS-CoV-2):
+        text: nucleocapsid phosphoprotein gene (SARS-CoV-2)
+        meaning: GENEPIO:0101174
+      open reading frame 10 gene (SARS-CoV-2):
+        text: open reading frame 10 gene (SARS-CoV-2)
+        meaning: GENEPIO:0101178
+  SARSCoV2GeneSymbolMenu:
+    name: SARSCoV2GeneSymbolMenu
+    title: SARS-CoV-2 gene symbol menu
+    permissible_values:
+      orf1ab gene (SARS-CoV-2):
+        text: orf1ab gene (SARS-CoV-2)
+        meaning: GENEPIO:0101135
+      orf1a gene (SARS-CoV-2):
+        text: orf1a gene (SARS-CoV-2)
+        meaning: GENEPIO:0101139
+      s gene (SARS-CoV-2):
+        text: s gene (SARS-CoV-2)
+        meaning: GENEPIO:0101143
+      orf3a gene (SARS-CoV-2):
+        text: orf3a gene (SARS-CoV-2)
+        meaning: GENEPIO:0101147
+      e gene (SARS-CoV-2):
+        text: e gene (SARS-CoV-2)
+        meaning: GENEPIO:0101151
+      m gene (SARS-CoV-2):
+        text: m gene (SARS-CoV-2)
+        meaning: GENEPIO:0101155
+      orf6 gene (SARS-CoV-2):
+        text: orf6 gene (SARS-CoV-2)
+        meaning: GENEPIO:0101159
+      orf7a gene (SARS-CoV-2):
+        text: orf7a gene (SARS-CoV-2)
+        meaning: GENEPIO:0101163
+      orf7b gene (SARS-CoV-2):
+        text: orf7b gene (SARS-CoV-2)
+        meaning: GENEPIO:0101167
+      orf8 gene (SARS-CoV-2):
+        text: orf8 gene (SARS-CoV-2)
+        meaning: GENEPIO:0101171
+      n gene (SARS-CoV-2):
+        text: n gene (SARS-CoV-2)
+        meaning: GENEPIO:0101175
+      orf10 gene (SARS-CoV-2):
+        text: orf10 gene (SARS-CoV-2)
+        meaning: GENEPIO:0101179
+  SARSCoV2ProteinNameMenu:
+    name: SARSCoV2ProteinNameMenu
+    title: SARS-CoV-2 protein name menu
+    permissible_values:
+      open reading frame 1ab polyprotein (SARS-CoV-2):
+        text: open reading frame 1ab polyprotein (SARS-CoV-2)
+        meaning: GENEPIO:0101136
+      open reading frame 1a polyprotein (SARS-CoV-2):
+        text: open reading frame 1a polyprotein (SARS-CoV-2)
+        meaning: GENEPIO:0101140
+      surface glycoprotein (SARS-CoV-2):
+        text: surface glycoprotein (SARS-CoV-2)
+        meaning: GENEPIO:0101144
+      open reading frame 3a protein (SARS-CoV-2):
+        text: open reading frame 3a protein (SARS-CoV-2)
+        meaning: GENEPIO:0101148
+      envelope protein (SARS-CoV-2):
+        text: envelope protein (SARS-CoV-2)
+        meaning: GENEPIO:0101152
+      membrane glycoprotein (SARS-CoV-2):
+        text: membrane glycoprotein (SARS-CoV-2)
+        meaning: GENEPIO:0101156
+      open reading frame 6 protein (SARS-CoV-2):
+        text: open reading frame 6 protein (SARS-CoV-2)
+        meaning: GENEPIO:0101160
+      open reading frame 7a protein (SARS-CoV-2):
+        text: open reading frame 7a protein (SARS-CoV-2)
+        meaning: GENEPIO:0101164
+      open reading frame 7b protein (SARS-CoV-2):
+        text: open reading frame 7b protein (SARS-CoV-2)
+        meaning: GENEPIO:0101168
+      open reading frame 8 protein (SARS-CoV-2):
+        text: open reading frame 8 protein (SARS-CoV-2)
+        meaning: GENEPIO:0101172
+      nucleocapsid phosphoprotein (SARS-CoV-2):
+        text: nucleocapsid phosphoprotein (SARS-CoV-2)
+        meaning: GENEPIO:0101176
+      open reading frame 10 protein (SARS-CoV-2):
+        text: open reading frame 10 protein (SARS-CoV-2)
+        meaning: GENEPIO:0101180
+  SARSCoV2ProteinSymbolMenu:
+    name: SARSCoV2ProteinSymbolMenu
+    title: SARS-CoV-2 protein symbol menu
+    permissible_values:
+      Orf1ab protein (SARS-CoV-2):
+        text: Orf1ab protein (SARS-CoV-2)
+        meaning: GENEPIO:0101137
+      Orf1a protein (SARS-CoV-2):
+        text: Orf1a protein (SARS-CoV-2)
+        meaning: GENEPIO:0101141
+      S protein (SARS-CoV-2):
+        text: S protein (SARS-CoV-2)
+        meaning: GENEPIO:0101145
+      Orf3a protein (SARS-CoV-2):
+        text: Orf3a protein (SARS-CoV-2)
+        meaning: GENEPIO:0101149
+      E protein (SARS-CoV-2):
+        text: E protein (SARS-CoV-2)
+        meaning: GENEPIO:0101153
+      M protein (SARS-CoV-2):
+        text: M protein (SARS-CoV-2)
+        meaning: GENEPIO:0101157
+      Orf6 protein (SARS-CoV-2):
+        text: Orf6 protein (SARS-CoV-2)
+        meaning: GENEPIO:0101161
+      Orf7a protein (SARS-CoV-2):
+        text: Orf7a protein (SARS-CoV-2)
+        meaning: GENEPIO:0101165
+      Orf7b protein (SARS-CoV-2):
+        text: Orf7b protein (SARS-CoV-2)
+        meaning: GENEPIO:0101169
+      Orf8 protein (SARS-CoV-2):
+        text: Orf8 protein (SARS-CoV-2)
+        meaning: GENEPIO:0101173
+      N protein (SARS-CoV-2):
+        text: N protein (SARS-CoV-2)
+        meaning: GENEPIO:0101177
+      Orf10 protein (SARS-CoV-2):
+        text: Orf10 protein (SARS-CoV-2)
+        meaning: GENEPIO:0101181
+  MPOXOrganismMenu:
+    name: MPOXOrganismMenu
+    title: Mpox organism menu
+    permissible_values:
+      Monkeypox virus:
+        text: Monkeypox virus
+        meaning: NCBITaxon:10244
+  MPOXReferenceAccessionMenu:
+    name: MPOXReferenceAccessionMenu
+    title: Mpox reference accession menu
+    permissible_values:
+      NC_063383.1:
+        text: NC_063383.1
+  MPOXGeneNameMenu:
+    name: MPOXGeneNameMenu
+    title: Mpox gene name menu
+    permissible_values:
+      orthopoxvirus gene 001 (MPOX):
+        text: orthopoxvirus gene 001 (MPOX)
+        meaning: GENEPIO:0101207
+      orthopoxvirus gene 002 (MPOX):
+        text: orthopoxvirus gene 002 (MPOX)
+        meaning: GENEPIO:0101208
+      orthopoxvirus gene 003 (MPOX):
+        text: orthopoxvirus gene 003 (MPOX)
+        meaning: GENEPIO:0101209
+      orthopoxvirus gene 015 (MPOX):
+        text: orthopoxvirus gene 015 (MPOX)
+        meaning: GENEPIO:0101210
+      orthopoxvirus gene 019 (MPOX):
+        text: orthopoxvirus gene 019 (MPOX)
+        meaning: GENEPIO:0101211
+      orthopoxvirus gene 021 (MPOX):
+        text: orthopoxvirus gene 021 (MPOX)
+        meaning: GENEPIO:0101212
+      orthopoxvirus gene 022 (MPOX):
+        text: orthopoxvirus gene 022 (MPOX)
+        meaning: GENEPIO:0101213
+      orthopoxvirus gene 023 (MPOX):
+        text: orthopoxvirus gene 023 (MPOX)
+        meaning: GENEPIO:0101214
+      orthopoxvirus gene 024 (MPOX):
+        text: orthopoxvirus gene 024 (MPOX)
+        meaning: GENEPIO:0101215
+      orthopoxvirus gene 025 (MPOX):
+        text: orthopoxvirus gene 025 (MPOX)
+        meaning: GENEPIO:0101216
+      orthopoxvirus gene 027 (MPOX):
+        text: orthopoxvirus gene 027 (MPOX)
+        meaning: GENEPIO:0101217
+      orthopoxvirus gene 029 (MPOX):
+        text: orthopoxvirus gene 029 (MPOX)
+        meaning: GENEPIO:0101218
+      orthopoxvirus gene 030 (MPOX):
+        text: orthopoxvirus gene 030 (MPOX)
+        meaning: GENEPIO:0101219
+      orthopoxvirus gene 031 (MPOX):
+        text: orthopoxvirus gene 031 (MPOX)
+        meaning: GENEPIO:0101220
+      orthopoxvirus gene 034 (MPOX):
+        text: orthopoxvirus gene 034 (MPOX)
+        meaning: GENEPIO:0101221
+      orthopoxvirus gene 035 (MPOX):
+        text: orthopoxvirus gene 035 (MPOX)
+        meaning: GENEPIO:0101222
+      orthopoxvirus gene 037 (MPOX):
+        text: orthopoxvirus gene 037 (MPOX)
+        meaning: GENEPIO:0101224
+      orthopoxvirus gene 038 (MPOX):
+        text: orthopoxvirus gene 038 (MPOX)
+        meaning: GENEPIO:0101225
+      orthopoxvirus gene 039 (MPOX):
+        text: orthopoxvirus gene 039 (MPOX)
+        meaning: GENEPIO:0101226
+      orthopoxvirus gene 040 (MPOX):
+        text: orthopoxvirus gene 040 (MPOX)
+        meaning: GENEPIO:0101227
+      orthopoxvirus gene 042 (MPOX):
+        text: orthopoxvirus gene 042 (MPOX)
+        meaning: GENEPIO:0101228
+      orthopoxvirus gene 043 (MPOX):
+        text: orthopoxvirus gene 043 (MPOX)
+        meaning: GENEPIO:0101229
+      orthopoxvirus gene 045 (MPOX):
+        text: orthopoxvirus gene 045 (MPOX)
+        meaning: GENEPIO:0101231
+      orthopoxvirus gene 046 (MPOX):
+        text: orthopoxvirus gene 046 (MPOX)
+        meaning: GENEPIO:0101232
+      orthopoxvirus gene 047 (MPOX):
+        text: orthopoxvirus gene 047 (MPOX)
+        meaning: GENEPIO:0101233
+      orthopoxvirus gene 048 (MPOX):
+        text: orthopoxvirus gene 048 (MPOX)
+        meaning: GENEPIO:0101234
+      orthopoxvirus gene 049 (MPOX):
+        text: orthopoxvirus gene 049 (MPOX)
+        meaning: GENEPIO:0101235
+      orthopoxvirus gene 050 (MPOX):
+        text: orthopoxvirus gene 050 (MPOX)
+        meaning: GENEPIO:0101236
+      orthopoxvirus gene 051 (MPOX):
+        text: orthopoxvirus gene 051 (MPOX)
+        meaning: GENEPIO:0101237
+      orthopoxvirus gene 052 (MPOX):
+        text: orthopoxvirus gene 052 (MPOX)
+        meaning: GENEPIO:0101238
+      orthopoxvirus gene 053 (MPOX):
+        text: orthopoxvirus gene 053 (MPOX)
+        meaning: GENEPIO:0101239
+      orthopoxvirus gene 054 (MPOX):
+        text: orthopoxvirus gene 054 (MPOX)
+        meaning: GENEPIO:0101240
+      orthopoxvirus gene 055 (MPOX):
+        text: orthopoxvirus gene 055 (MPOX)
+        meaning: GENEPIO:0101241
+      orthopoxvirus gene 056 (MPOX):
+        text: orthopoxvirus gene 056 (MPOX)
+        meaning: GENEPIO:0101242
+      orthopoxvirus gene 057 (MPOX):
+        text: orthopoxvirus gene 057 (MPOX)
+        meaning: GENEPIO:0101243
+      orthopoxvirus gene 058 (MPOX):
+        text: orthopoxvirus gene 058 (MPOX)
+        meaning: GENEPIO:0101244
+      orthopoxvirus gene 059 (MPOX):
+        text: orthopoxvirus gene 059 (MPOX)
+        meaning: GENEPIO:0101245
+      orthopoxvirus gene 060 (MPOX):
+        text: orthopoxvirus gene 060 (MPOX)
+        meaning: GENEPIO:0101246
+      orthopoxvirus gene 061 (MPOX):
+        text: orthopoxvirus gene 061 (MPOX)
+        meaning: GENEPIO:0101247
+      orthopoxvirus gene 062 (MPOX):
+        text: orthopoxvirus gene 062 (MPOX)
+        meaning: GENEPIO:0101248
+      orthopoxvirus gene 063 (MPOX):
+        text: orthopoxvirus gene 063 (MPOX)
+        meaning: GENEPIO:0101249
+      orthopoxvirus gene 064 (MPOX):
+        text: orthopoxvirus gene 064 (MPOX)
+        meaning: GENEPIO:0101250
+      orthopoxvirus gene 065 (MPOX):
+        text: orthopoxvirus gene 065 (MPOX)
+        meaning: GENEPIO:0101251
+      orthopoxvirus gene 066 (MPOX):
+        text: orthopoxvirus gene 066 (MPOX)
+        meaning: GENEPIO:0101252
+      orthopoxvirus gene 068 (MPOX):
+        text: orthopoxvirus gene 068 (MPOX)
+        meaning: GENEPIO:0101253
+      orthopoxvirus gene 069 (MPOX):
+        text: orthopoxvirus gene 069 (MPOX)
+        meaning: GENEPIO:0101254
+      orthopoxvirus gene 070 (MPOX):
+        text: orthopoxvirus gene 070 (MPOX)
+        meaning: GENEPIO:0101255
+      orthopoxvirus gene 071 (MPOX):
+        text: orthopoxvirus gene 071 (MPOX)
+        meaning: GENEPIO:0101256
+      orthopoxvirus gene 072 (MPOX):
+        text: orthopoxvirus gene 072 (MPOX)
+        meaning: GENEPIO:0101257
+      orthopoxvirus gene 073 (MPOX):
+        text: orthopoxvirus gene 073 (MPOX)
+        meaning: GENEPIO:0101258
+      orthopoxvirus gene 074 (MPOX):
+        text: orthopoxvirus gene 074 (MPOX)
+        meaning: GENEPIO:0101259
+      orthopoxvirus gene 075 (MPOX):
+        text: orthopoxvirus gene 075 (MPOX)
+        meaning: GENEPIO:0101260
+      orthopoxvirus gene 077 (MPOX):
+        text: orthopoxvirus gene 077 (MPOX)
+        meaning: GENEPIO:0101262
+      orthopoxvirus gene 078 (MPOX):
+        text: orthopoxvirus gene 078 (MPOX)
+        meaning: GENEPIO:0101263
+      orthopoxvirus gene 079 (MPOX):
+        text: orthopoxvirus gene 079 (MPOX)
+        meaning: GENEPIO:0101264
+      orthopoxvirus gene 080 (MPOX):
+        text: orthopoxvirus gene 080 (MPOX)
+        meaning: GENEPIO:0101265
+      orthopoxvirus gene 081 (MPOX):
+        text: orthopoxvirus gene 081 (MPOX)
+        meaning: GENEPIO:0101266
+      orthopoxvirus gene 082 (MPOX):
+        text: orthopoxvirus gene 082 (MPOX)
+        meaning: GENEPIO:0101267
+      orthopoxvirus gene 083 (MPOX):
+        text: orthopoxvirus gene 083 (MPOX)
+        meaning: GENEPIO:0101268
+      orthopoxvirus gene 084 (MPOX):
+        text: orthopoxvirus gene 084 (MPOX)
+        meaning: GENEPIO:0101269
+      orthopoxvirus gene 085 (MPOX):
+        text: orthopoxvirus gene 085 (MPOX)
+        meaning: GENEPIO:0101270
+      orthopoxvirus gene 086 (MPOX):
+        text: orthopoxvirus gene 086 (MPOX)
+        meaning: GENEPIO:0101271
+      orthopoxvirus gene 087 (MPOX):
+        text: orthopoxvirus gene 087 (MPOX)
+        meaning: GENEPIO:0101272
+      orthopoxvirus gene 088 (MPOX):
+        text: orthopoxvirus gene 088 (MPOX)
+        meaning: GENEPIO:0101273
+      orthopoxvirus gene 089 (MPOX):
+        text: orthopoxvirus gene 089 (MPOX)
+        meaning: GENEPIO:0101274
+      orthopoxvirus gene 090 (MPOX):
+        text: orthopoxvirus gene 090 (MPOX)
+        meaning: GENEPIO:0101275
+      orthopoxvirus gene 091 (MPOX):
+        text: orthopoxvirus gene 091 (MPOX)
+        meaning: GENEPIO:0101276
+      orthopoxvirus gene 092 (MPOX):
+        text: orthopoxvirus gene 092 (MPOX)
+        meaning: GENEPIO:0101277
+      orthopoxvirus gene 093 (MPOX):
+        text: orthopoxvirus gene 093 (MPOX)
+        meaning: GENEPIO:0101278
+      orthopoxvirus gene 094 (MPOX):
+        text: orthopoxvirus gene 094 (MPOX)
+        meaning: GENEPIO:0101279
+      orthopoxvirus gene 095 (MPOX):
+        text: orthopoxvirus gene 095 (MPOX)
+        meaning: GENEPIO:0101280
+      orthopoxvirus gene 096 (MPOX):
+        text: orthopoxvirus gene 096 (MPOX)
+        meaning: GENEPIO:0101281
+      orthopoxvirus gene 097 (MPOX):
+        text: orthopoxvirus gene 097 (MPOX)
+        meaning: GENEPIO:0101282
+      orthopoxvirus gene 098 (MPOX):
+        text: orthopoxvirus gene 098 (MPOX)
+        meaning: GENEPIO:0101283
+      orthopoxvirus gene 099 (MPOX):
+        text: orthopoxvirus gene 099 (MPOX)
+        meaning: GENEPIO:0101284
+      orthopoxvirus gene 100 (MPOX):
+        text: orthopoxvirus gene 100 (MPOX)
+        meaning: GENEPIO:0101285
+      orthopoxvirus gene 101 (MPOX):
+        text: orthopoxvirus gene 101 (MPOX)
+        meaning: GENEPIO:0101286
+      orthopoxvirus gene 102 (MPOX):
+        text: orthopoxvirus gene 102 (MPOX)
+        meaning: GENEPIO:0101287
+      orthopoxvirus gene 103 (MPOX):
+        text: orthopoxvirus gene 103 (MPOX)
+        meaning: GENEPIO:0101288
+      orthopoxvirus gene 104 (MPOX):
+        text: orthopoxvirus gene 104 (MPOX)
+        meaning: GENEPIO:0101289
+      orthopoxvirus gene 105 (MPOX):
+        text: orthopoxvirus gene 105 (MPOX)
+        meaning: GENEPIO:0101290
+      orthopoxvirus gene 106 (MPOX):
+        text: orthopoxvirus gene 106 (MPOX)
+        meaning: GENEPIO:0101291
+      orthopoxvirus gene 107 (MPOX):
+        text: orthopoxvirus gene 107 (MPOX)
+        meaning: GENEPIO:0101292
+      orthopoxvirus gene 108 (MPOX):
+        text: orthopoxvirus gene 108 (MPOX)
+        meaning: GENEPIO:0101293
+      orthopoxvirus gene 109 (MPOX):
+        text: orthopoxvirus gene 109 (MPOX)
+        meaning: GENEPIO:0101294
+      orthopoxvirus gene 110 (MPOX):
+        text: orthopoxvirus gene 110 (MPOX)
+        meaning: GENEPIO:0101295
+      orthopoxvirus gene 111 (MPOX):
+        text: orthopoxvirus gene 111 (MPOX)
+        meaning: GENEPIO:0101296
+      orthopoxvirus gene 112 (MPOX):
+        text: orthopoxvirus gene 112 (MPOX)
+        meaning: GENEPIO:0101297
+      orthopoxvirus gene 113 (MPOX):
+        text: orthopoxvirus gene 113 (MPOX)
+        meaning: GENEPIO:0101298
+      orthopoxvirus gene 114 (MPOX):
+        text: orthopoxvirus gene 114 (MPOX)
+        meaning: GENEPIO:0101299
+      orthopoxvirus gene 115 (MPOX):
+        text: orthopoxvirus gene 115 (MPOX)
+        meaning: GENEPIO:0101300
+      orthopoxvirus gene 116 (MPOX):
+        text: orthopoxvirus gene 116 (MPOX)
+        meaning: GENEPIO:0101301
+      orthopoxvirus gene 117 (MPOX):
+        text: orthopoxvirus gene 117 (MPOX)
+        meaning: GENEPIO:0101302
+      orthopoxvirus gene 118 (MPOX):
+        text: orthopoxvirus gene 118 (MPOX)
+        meaning: GENEPIO:0101303
+      orthopoxvirus gene 119 (MPOX):
+        text: orthopoxvirus gene 119 (MPOX)
+        meaning: GENEPIO:0101304
+      orthopoxvirus gene 120 (MPOX):
+        text: orthopoxvirus gene 120 (MPOX)
+        meaning: GENEPIO:0101305
+      orthopoxvirus gene 121 (MPOX):
+        text: orthopoxvirus gene 121 (MPOX)
+        meaning: GENEPIO:0101306
+      orthopoxvirus gene 122 (MPOX):
+        text: orthopoxvirus gene 122 (MPOX)
+        meaning: GENEPIO:0101307
+      orthopoxvirus gene 123 (MPOX):
+        text: orthopoxvirus gene 123 (MPOX)
+        meaning: GENEPIO:0101308
+      orthopoxvirus gene 124 (MPOX):
+        text: orthopoxvirus gene 124 (MPOX)
+        meaning: GENEPIO:0101309
+      orthopoxvirus gene 125 (MPOX):
+        text: orthopoxvirus gene 125 (MPOX)
+        meaning: GENEPIO:0101310
+      orthopoxvirus gene 126 (MPOX):
+        text: orthopoxvirus gene 126 (MPOX)
+        meaning: GENEPIO:0101311
+      orthopoxvirus gene 127 (MPOX):
+        text: orthopoxvirus gene 127 (MPOX)
+        meaning: GENEPIO:0101312
+      orthopoxvirus gene 128 (MPOX):
+        text: orthopoxvirus gene 128 (MPOX)
+        meaning: GENEPIO:0101313
+      orthopoxvirus gene 129 (MPOX):
+        text: orthopoxvirus gene 129 (MPOX)
+        meaning: GENEPIO:0101314
+      orthopoxvirus gene 130 (MPOX):
+        text: orthopoxvirus gene 130 (MPOX)
+        meaning: GENEPIO:0101315
+      orthopoxvirus gene 131 (MPOX):
+        text: orthopoxvirus gene 131 (MPOX)
+        meaning: GENEPIO:0101316
+      orthopoxvirus gene 132 (MPOX):
+        text: orthopoxvirus gene 132 (MPOX)
+        meaning: GENEPIO:0101317
+      orthopoxvirus gene 133 (MPOX):
+        text: orthopoxvirus gene 133 (MPOX)
+        meaning: GENEPIO:0101318
+      orthopoxvirus gene 134 (MPOX):
+        text: orthopoxvirus gene 134 (MPOX)
+        meaning: GENEPIO:0101319
+      orthopoxvirus gene 135 (MPOX):
+        text: orthopoxvirus gene 135 (MPOX)
+        meaning: GENEPIO:0101320
+      orthopoxvirus gene 136 (MPOX):
+        text: orthopoxvirus gene 136 (MPOX)
+        meaning: GENEPIO:0101321
+      orthopoxvirus gene 137 (MPOX):
+        text: orthopoxvirus gene 137 (MPOX)
+        meaning: GENEPIO:0101322
+      orthopoxvirus gene 138 (MPOX):
+        text: orthopoxvirus gene 138 (MPOX)
+        meaning: GENEPIO:0101323
+      orthopoxvirus gene 139 (MPOX):
+        text: orthopoxvirus gene 139 (MPOX)
+        meaning: GENEPIO:0101324
+      orthopoxvirus gene 140 (MPOX):
+        text: orthopoxvirus gene 140 (MPOX)
+        meaning: GENEPIO:0101325
+      orthopoxvirus gene 141 (MPOX):
+        text: orthopoxvirus gene 141 (MPOX)
+        meaning: GENEPIO:0101326
+      orthopoxvirus gene 142 (MPOX):
+        text: orthopoxvirus gene 142 (MPOX)
+        meaning: GENEPIO:0101327
+      orthopoxvirus gene 143 (MPOX):
+        text: orthopoxvirus gene 143 (MPOX)
+        meaning: GENEPIO:0101328
+      orthopoxvirus gene 144 (MPOX):
+        text: orthopoxvirus gene 144 (MPOX)
+        meaning: GENEPIO:0101329
+      orthopoxvirus gene 145 (MPOX):
+        text: orthopoxvirus gene 145 (MPOX)
+        meaning: GENEPIO:0101330
+      orthopoxvirus gene 146 (MPOX):
+        text: orthopoxvirus gene 146 (MPOX)
+        meaning: GENEPIO:0101331
+      orthopoxvirus gene 147 (MPOX):
+        text: orthopoxvirus gene 147 (MPOX)
+        meaning: GENEPIO:0101332
+      orthopoxvirus gene 148 (MPOX):
+        text: orthopoxvirus gene 148 (MPOX)
+        meaning: GENEPIO:0101333
+      orthopoxvirus gene 149 (MPOX):
+        text: orthopoxvirus gene 149 (MPOX)
+        meaning: GENEPIO:0101334
+      orthopoxvirus gene 150 (MPOX):
+        text: orthopoxvirus gene 150 (MPOX)
+        meaning: GENEPIO:0101335
+      orthopoxvirus gene 151 (MPOX):
+        text: orthopoxvirus gene 151 (MPOX)
+        meaning: GENEPIO:0101336
+      orthopoxvirus gene 153 (MPOX):
+        text: orthopoxvirus gene 153 (MPOX)
+        meaning: GENEPIO:0101337
+      orthopoxvirus gene 154 (MPOX):
+        text: orthopoxvirus gene 154 (MPOX)
+        meaning: GENEPIO:0101338
+      orthopoxvirus gene 155 (MPOX):
+        text: orthopoxvirus gene 155 (MPOX)
+        meaning: GENEPIO:0101339
+      orthopoxvirus gene 156 (MPOX):
+        text: orthopoxvirus gene 156 (MPOX)
+        meaning: GENEPIO:0101340
+      orthopoxvirus gene 157 (MPOX):
+        text: orthopoxvirus gene 157 (MPOX)
+        meaning: GENEPIO:0101341
+      orthopoxvirus gene 158 (MPOX):
+        text: orthopoxvirus gene 158 (MPOX)
+        meaning: GENEPIO:0101342
+      orthopoxvirus gene 159 (MPOX):
+        text: orthopoxvirus gene 159 (MPOX)
+        meaning: GENEPIO:0101343
+      orthopoxvirus gene 160 (MPOX):
+        text: orthopoxvirus gene 160 (MPOX)
+        meaning: GENEPIO:0101344
+      orthopoxvirus gene 161 (MPOX):
+        text: orthopoxvirus gene 161 (MPOX)
+        meaning: GENEPIO:0101345
+      orthopoxvirus gene 162 (MPOX):
+        text: orthopoxvirus gene 162 (MPOX)
+        meaning: GENEPIO:0101346
+      orthopoxvirus gene 163 (MPOX):
+        text: orthopoxvirus gene 163 (MPOX)
+        meaning: GENEPIO:0101347
+      orthopoxvirus gene 164 (MPOX):
+        text: orthopoxvirus gene 164 (MPOX)
+        meaning: GENEPIO:0101348
+      orthopoxvirus gene 165 (MPOX):
+        text: orthopoxvirus gene 165 (MPOX)
+        meaning: GENEPIO:0101349
+      orthopoxvirus gene 166 (MPOX):
+        text: orthopoxvirus gene 166 (MPOX)
+        meaning: GENEPIO:0101350
+      orthopoxvirus gene 167 (MPOX):
+        text: orthopoxvirus gene 167 (MPOX)
+        meaning: GENEPIO:0101351
+      orthopoxvirus gene 170 (MPOX):
+        text: orthopoxvirus gene 170 (MPOX)
+        meaning: GENEPIO:0101352
+      orthopoxvirus gene 171 (MPOX):
+        text: orthopoxvirus gene 171 (MPOX)
+        meaning: GENEPIO:0101353
+      orthopoxvirus gene 172 (MPOX):
+        text: orthopoxvirus gene 172 (MPOX)
+        meaning: GENEPIO:0101354
+      orthopoxvirus gene 173 (MPOX):
+        text: orthopoxvirus gene 173 (MPOX)
+        meaning: GENEPIO:0101355
+      orthopoxvirus gene 174 (MPOX):
+        text: orthopoxvirus gene 174 (MPOX)
+        meaning: GENEPIO:0101356
+      orthopoxvirus gene 175 (MPOX):
+        text: orthopoxvirus gene 175 (MPOX)
+        meaning: GENEPIO:0101357
+      orthopoxvirus gene 176 (MPOX):
+        text: orthopoxvirus gene 176 (MPOX)
+        meaning: GENEPIO:0101358
+      orthopoxvirus gene 178 (MPOX):
+        text: orthopoxvirus gene 178 (MPOX)
+        meaning: GENEPIO:0101359
+      orthopoxvirus gene 180 (MPOX):
+        text: orthopoxvirus gene 180 (MPOX)
+        meaning: GENEPIO:0101360
+      orthopoxvirus gene 181 (MPOX):
+        text: orthopoxvirus gene 181 (MPOX)
+        meaning: GENEPIO:0101361
+      orthopoxvirus gene 185 (MPOX):
+        text: orthopoxvirus gene 185 (MPOX)
+        meaning: GENEPIO:0101362
+      orthopoxvirus gene 187 (MPOX):
+        text: orthopoxvirus gene 187 (MPOX)
+        meaning: GENEPIO:0101363
+      orthopoxvirus gene 188 (MPOX):
+        text: orthopoxvirus gene 188 (MPOX)
+        meaning: GENEPIO:0101364
+      orthopoxvirus gene 189 (MPOX):
+        text: orthopoxvirus gene 189 (MPOX)
+        meaning: GENEPIO:0101365
+      orthopoxvirus gene 190 (MPOX):
+        text: orthopoxvirus gene 190 (MPOX)
+        meaning: GENEPIO:0101366
+      orthopoxvirus gene 191 (MPOX):
+        text: orthopoxvirus gene 191 (MPOX)
+        meaning: GENEPIO:0101367
+      orthopoxvirus gene 192 (MPOX):
+        text: orthopoxvirus gene 192 (MPOX)
+        meaning: GENEPIO:0101368
+      orthopoxvirus gene 193 (MPOX):
+        text: orthopoxvirus gene 193 (MPOX)
+        meaning: GENEPIO:0101369
+      orthopoxvirus gene 195 (MPOX):
+        text: orthopoxvirus gene 195 (MPOX)
+        meaning: GENEPIO:0101370
+      orthopoxvirus gene 197 (MPOX):
+        text: orthopoxvirus gene 197 (MPOX)
+        meaning: GENEPIO:0101371
+      orthopoxvirus gene 198 (MPOX):
+        text: orthopoxvirus gene 198 (MPOX)
+        meaning: GENEPIO:0101372
+      orthopoxvirus gene 199 (MPOX):
+        text: orthopoxvirus gene 199 (MPOX)
+        meaning: GENEPIO:0101373
+      orthopoxvirus gene 200 (MPOX):
+        text: orthopoxvirus gene 200 (MPOX)
+        meaning: GENEPIO:0101374
+      orthopoxvirus gene 204 (MPOX):
+        text: orthopoxvirus gene 204 (MPOX)
+        meaning: GENEPIO:0101375
+      orthopoxvirus gene 205 (MPOX):
+        text: orthopoxvirus gene 205 (MPOX)
+        meaning: GENEPIO:0101376
+      orthopoxvirus gene 208 (MPOX):
+        text: orthopoxvirus gene 208 (MPOX)
+        meaning: GENEPIO:0101377
+      orthopoxvirus gene 209 (MPOX):
+        text: orthopoxvirus gene 209 (MPOX)
+        meaning: GENEPIO:0101378
+      orthopoxvirus gene 210 (MPOX):
+        text: orthopoxvirus gene 210 (MPOX)
+        meaning: GENEPIO:0101379
+      orthopoxvirus gene 005 (MPOX):
+        text: orthopoxvirus gene 005 (MPOX)
+        meaning: GENEPIO:0101380
+      orthopoxvirus gene 016 (MPOX):
+        text: orthopoxvirus gene 016 (MPOX)
+        meaning: GENEPIO:0101381
+  MPOXGeneSymbolMenu:
+    name: MPOXGeneSymbolMenu
+    title: Mpox gene symbol menu
+    permissible_values:
+      opg001 gene (MPOX):
+        text: opg001 gene (MPOX)
+        meaning: GENEPIO:0101382
+      opg002 gene (MPOX):
+        text: opg002 gene (MPOX)
+        meaning: GENEPIO:0101383
+      opg003 gene (MPOX):
+        text: opg003 gene (MPOX)
+        meaning: GENEPIO:0101384
+      opg015 gene (MPOX):
+        text: opg015 gene (MPOX)
+        meaning: GENEPIO:0101385
+      opg019 gene (MPOX):
+        text: opg019 gene (MPOX)
+        meaning: GENEPIO:0101386
+      opg021 gene (MPOX):
+        text: opg021 gene (MPOX)
+        meaning: GENEPIO:0101387
+      opg022 gene (MPOX):
+        text: opg022 gene (MPOX)
+        meaning: GENEPIO:0101388
+      opg023 gene (MPOX):
+        text: opg023 gene (MPOX)
+        meaning: GENEPIO:0101389
+      opg024 gene (MPOX):
+        text: opg024 gene (MPOX)
+        meaning: GENEPIO:0101390
+      opg025 gene (MPOX):
+        text: opg025 gene (MPOX)
+        meaning: GENEPIO:0101391
+      opg027 gene (MPOX):
+        text: opg027 gene (MPOX)
+        meaning: GENEPIO:0101392
+      opg029 gene (MPOX):
+        text: opg029 gene (MPOX)
+        meaning: GENEPIO:0101393
+      opg030 gene (MPOX):
+        text: opg030 gene (MPOX)
+        meaning: GENEPIO:0101394
+      opg031 gene (MPOX):
+        text: opg031 gene (MPOX)
+        meaning: GENEPIO:0101395
+      opg034 gene (MPOX):
+        text: opg034 gene (MPOX)
+        meaning: GENEPIO:0101396
+      opg035 gene (MPOX):
+        text: opg035 gene (MPOX)
+        meaning: GENEPIO:0101397
+      opg037 gene (MPOX):
+        text: opg037 gene (MPOX)
+        meaning: GENEPIO:0101399
+      opg038 gene (MPOX):
+        text: opg038 gene (MPOX)
+        meaning: GENEPIO:0101400
+      opg039 gene (MPOX):
+        text: opg039 gene (MPOX)
+        meaning: GENEPIO:0101401
+      opg040 gene (MPOX):
+        text: opg040 gene (MPOX)
+        meaning: GENEPIO:0101402
+      opg042 gene (MPOX):
+        text: opg042 gene (MPOX)
+        meaning: GENEPIO:0101403
+      opg043 gene (MPOX):
+        text: opg043 gene (MPOX)
+        meaning: GENEPIO:0101404
+      opg045 gene (MPOX):
+        text: opg045 gene (MPOX)
+        meaning: GENEPIO:0101406
+      opg046 gene (MPOX):
+        text: opg046 gene (MPOX)
+        meaning: GENEPIO:0101407
+      opg047 gene (MPOX):
+        text: opg047 gene (MPOX)
+        meaning: GENEPIO:0101408
+      opg048 gene (MPOX):
+        text: opg048 gene (MPOX)
+        meaning: GENEPIO:0101409
+      opg049 gene (MPOX):
+        text: opg049 gene (MPOX)
+        meaning: GENEPIO:0101410
+      opg050 gene (MPOX):
+        text: opg050 gene (MPOX)
+        meaning: GENEPIO:0101411
+      opg051 gene (MPOX):
+        text: opg051 gene (MPOX)
+        meaning: GENEPIO:0101412
+      opg052 gene (MPOX):
+        text: opg052 gene (MPOX)
+        meaning: GENEPIO:0101413
+      opg053 gene (MPOX):
+        text: opg053 gene (MPOX)
+        meaning: GENEPIO:0101414
+      opg054 gene (MPOX):
+        text: opg054 gene (MPOX)
+        meaning: GENEPIO:0101415
+      opg055 gene (MPOX):
+        text: opg055 gene (MPOX)
+        meaning: GENEPIO:0101416
+      opg056 gene (MPOX):
+        text: opg056 gene (MPOX)
+        meaning: GENEPIO:0101417
+      opg057 gene (MPOX):
+        text: opg057 gene (MPOX)
+        meaning: GENEPIO:0101418
+      opg058 gene (MPOX):
+        text: opg058 gene (MPOX)
+        meaning: GENEPIO:0101419
+      opg059 gene (MPOX):
+        text: opg059 gene (MPOX)
+        meaning: GENEPIO:0101420
+      opg060 gene (MPOX):
+        text: opg060 gene (MPOX)
+        meaning: GENEPIO:0101421
+      opg061 gene (MPOX):
+        text: opg061 gene (MPOX)
+        meaning: GENEPIO:0101422
+      opg062 gene (MPOX):
+        text: opg062 gene (MPOX)
+        meaning: GENEPIO:0101423
+      opg063 gene (MPOX):
+        text: opg063 gene (MPOX)
+        meaning: GENEPIO:0101424
+      opg064 gene (MPOX):
+        text: opg064 gene (MPOX)
+        meaning: GENEPIO:0101425
+      opg065 gene (MPOX):
+        text: opg065 gene (MPOX)
+        meaning: GENEPIO:0101426
+      opg066 gene (MPOX):
+        text: opg066 gene (MPOX)
+        meaning: GENEPIO:0101427
+      opg068 gene (MPOX):
+        text: opg068 gene (MPOX)
+        meaning: GENEPIO:0101428
+      opg069 gene (MPOX):
+        text: opg069 gene (MPOX)
+        meaning: GENEPIO:0101429
+      opg070 gene (MPOX):
+        text: opg070 gene (MPOX)
+        meaning: GENEPIO:0101430
+      opg071 gene (MPOX):
+        text: opg071 gene (MPOX)
+        meaning: GENEPIO:0101431
+      opg072 gene (MPOX):
+        text: opg072 gene (MPOX)
+        meaning: GENEPIO:0101432
+      opg073 gene (MPOX):
+        text: opg073 gene (MPOX)
+        meaning: GENEPIO:0101433
+      opg074 gene (MPOX):
+        text: opg074 gene (MPOX)
+        meaning: GENEPIO:0101434
+      opg075 gene (MPOX):
+        text: opg075 gene (MPOX)
+        meaning: GENEPIO:0101435
+      opg077 gene (MPOX):
+        text: opg077 gene (MPOX)
+        meaning: GENEPIO:0101437
+      opg078 gene (MPOX):
+        text: opg078 gene (MPOX)
+        meaning: GENEPIO:0101438
+      opg079 gene (MPOX):
+        text: opg079 gene (MPOX)
+        meaning: GENEPIO:0101439
+      opg080 gene (MPOX):
+        text: opg080 gene (MPOX)
+        meaning: GENEPIO:0101440
+      opg081 gene (MPOX):
+        text: opg081 gene (MPOX)
+        meaning: GENEPIO:0101441
+      opg082 gene (MPOX):
+        text: opg082 gene (MPOX)
+        meaning: GENEPIO:0101442
+      opg083 gene (MPOX):
+        text: opg083 gene (MPOX)
+        meaning: GENEPIO:0101443
+      opg084 gene (MPOX):
+        text: opg084 gene (MPOX)
+        meaning: GENEPIO:0101444
+      opg085 gene (MPOX):
+        text: opg085 gene (MPOX)
+        meaning: GENEPIO:0101445
+      opg086 gene (MPOX):
+        text: opg086 gene (MPOX)
+        meaning: GENEPIO:0101446
+      opg087 gene (MPOX):
+        text: opg087 gene (MPOX)
+        meaning: GENEPIO:0101447
+      opg088 gene (MPOX):
+        text: opg088 gene (MPOX)
+        meaning: GENEPIO:0101448
+      opg089 gene (MPOX):
+        text: opg089 gene (MPOX)
+        meaning: GENEPIO:0101449
+      opg090 gene (MPOX):
+        text: opg090 gene (MPOX)
+        meaning: GENEPIO:0101450
+      opg091 gene (MPOX):
+        text: opg091 gene (MPOX)
+        meaning: GENEPIO:0101451
+      opg092 gene (MPOX):
+        text: opg092 gene (MPOX)
+        meaning: GENEPIO:0101452
+      opg093 gene (MPOX):
+        text: opg093 gene (MPOX)
+        meaning: GENEPIO:0101453
+      opg094 gene (MPOX):
+        text: opg094 gene (MPOX)
+        meaning: GENEPIO:0101454
+      opg095 gene (MPOX):
+        text: opg095 gene (MPOX)
+        meaning: GENEPIO:0101455
+      opg096 gene (MPOX):
+        text: opg096 gene (MPOX)
+        meaning: GENEPIO:0101456
+      opg097 gene (MPOX):
+        text: opg097 gene (MPOX)
+        meaning: GENEPIO:0101457
+      opg098 gene (MPOX):
+        text: opg098 gene (MPOX)
+        meaning: GENEPIO:0101458
+      opg099 gene (MPOX):
+        text: opg099 gene (MPOX)
+        meaning: GENEPIO:0101459
+      opg100 gene (MPOX):
+        text: opg100 gene (MPOX)
+        meaning: GENEPIO:0101460
+      opg101 gene (MPOX):
+        text: opg101 gene (MPOX)
+        meaning: GENEPIO:0101461
+      opg102 gene (MPOX):
+        text: opg102 gene (MPOX)
+        meaning: GENEPIO:0101462
+      opg103 gene (MPOX):
+        text: opg103 gene (MPOX)
+        meaning: GENEPIO:0101463
+      opg104 gene (MPOX):
+        text: opg104 gene (MPOX)
+        meaning: GENEPIO:0101464
+      opg105 gene (MPOX):
+        text: opg105 gene (MPOX)
+        meaning: GENEPIO:0101465
+      opg106 gene (MPOX):
+        text: opg106 gene (MPOX)
+        meaning: GENEPIO:0101466
+      opg107 gene (MPOX):
+        text: opg107 gene (MPOX)
+        meaning: GENEPIO:0101467
+      opg108 gene (MPOX):
+        text: opg108 gene (MPOX)
+        meaning: GENEPIO:0101468
+      opg109 gene (MPOX):
+        text: opg109 gene (MPOX)
+        meaning: GENEPIO:0101469
+      opg110 gene (MPOX):
+        text: opg110 gene (MPOX)
+        meaning: GENEPIO:0101470
+      opg111 gene (MPOX):
+        text: opg111 gene (MPOX)
+        meaning: GENEPIO:0101471
+      opg112 gene (MPOX):
+        text: opg112 gene (MPOX)
+        meaning: GENEPIO:0101472
+      opg113 gene (MPOX):
+        text: opg113 gene (MPOX)
+        meaning: GENEPIO:0101473
+      opg114 gene (MPOX):
+        text: opg114 gene (MPOX)
+        meaning: GENEPIO:0101474
+      opg115 gene (MPOX):
+        text: opg115 gene (MPOX)
+        meaning: GENEPIO:0101475
+      opg116 gene (MPOX):
+        text: opg116 gene (MPOX)
+        meaning: GENEPIO:0101476
+      opg117 gene (MPOX):
+        text: opg117 gene (MPOX)
+        meaning: GENEPIO:0101477
+      opg118 gene (MPOX):
+        text: opg118 gene (MPOX)
+        meaning: GENEPIO:0101478
+      opg119 gene (MPOX):
+        text: opg119 gene (MPOX)
+        meaning: GENEPIO:0101479
+      opg120 gene (MPOX):
+        text: opg120 gene (MPOX)
+        meaning: GENEPIO:0101480
+      opg121 gene (MPOX):
+        text: opg121 gene (MPOX)
+        meaning: GENEPIO:0101481
+      opg122 gene (MPOX):
+        text: opg122 gene (MPOX)
+        meaning: GENEPIO:0101482
+      opg123 gene (MPOX):
+        text: opg123 gene (MPOX)
+        meaning: GENEPIO:0101483
+      opg124 gene (MPOX):
+        text: opg124 gene (MPOX)
+        meaning: GENEPIO:0101484
+      opg125 gene (MPOX):
+        text: opg125 gene (MPOX)
+        meaning: GENEPIO:0101485
+      opg126 gene (MPOX):
+        text: opg126 gene (MPOX)
+        meaning: GENEPIO:0101486
+      opg127 gene (MPOX):
+        text: opg127 gene (MPOX)
+        meaning: GENEPIO:0101487
+      opg128 gene (MPOX):
+        text: opg128 gene (MPOX)
+        meaning: GENEPIO:0101488
+      opg129 gene (MPOX):
+        text: opg129 gene (MPOX)
+        meaning: GENEPIO:0101489
+      opg130 gene (MPOX):
+        text: opg130 gene (MPOX)
+        meaning: GENEPIO:0101490
+      opg131 gene (MPOX):
+        text: opg131 gene (MPOX)
+        meaning: GENEPIO:0101491
+      opg132 gene (MPOX):
+        text: opg132 gene (MPOX)
+        meaning: GENEPIO:0101492
+      opg133 gene (MPOX):
+        text: opg133 gene (MPOX)
+        meaning: GENEPIO:0101493
+      opg134 gene (MPOX):
+        text: opg134 gene (MPOX)
+        meaning: GENEPIO:0101494
+      opg135 gene (MPOX):
+        text: opg135 gene (MPOX)
+        meaning: GENEPIO:0101495
+      opg136 gene (MPOX):
+        text: opg136 gene (MPOX)
+        meaning: GENEPIO:0101496
+      opg137 gene (MPOX):
+        text: opg137 gene (MPOX)
+        meaning: GENEPIO:0101497
+      opg138 gene (MPOX):
+        text: opg138 gene (MPOX)
+        meaning: GENEPIO:0101498
+      opg139 gene (MPOX):
+        text: opg139 gene (MPOX)
+        meaning: GENEPIO:0101499
+      opg140 gene (MPOX):
+        text: opg140 gene (MPOX)
+        meaning: GENEPIO:0101500
+      opg141 gene (MPOX):
+        text: opg141 gene (MPOX)
+        meaning: GENEPIO:0101501
+      opg142 gene (MPOX):
+        text: opg142 gene (MPOX)
+        meaning: GENEPIO:0101502
+      opg143 gene (MPOX):
+        text: opg143 gene (MPOX)
+        meaning: GENEPIO:0101503
+      opg144 gene (MPOX):
+        text: opg144 gene (MPOX)
+        meaning: GENEPIO:0101504
+      opg145 gene (MPOX):
+        text: opg145 gene (MPOX)
+        meaning: GENEPIO:0101505
+      opg146 gene (MPOX):
+        text: opg146 gene (MPOX)
+        meaning: GENEPIO:0101506
+      opg147 gene (MPOX):
+        text: opg147 gene (MPOX)
+        meaning: GENEPIO:0101507
+      opg148 gene (MPOX):
+        text: opg148 gene (MPOX)
+        meaning: GENEPIO:0101508
+      opg149 gene (MPOX):
+        text: opg149 gene (MPOX)
+        meaning: GENEPIO:0101509
+      opg150 gene (MPOX):
+        text: opg150 gene (MPOX)
+        meaning: GENEPIO:0101510
+      opg151 gene (MPOX):
+        text: opg151 gene (MPOX)
+        meaning: GENEPIO:0101511
+      opg153 gene (MPOX):
+        text: opg153 gene (MPOX)
+        meaning: GENEPIO:0101512
+      opg154 gene (MPOX):
+        text: opg154 gene (MPOX)
+        meaning: GENEPIO:0101513
+      opg155 gene (MPOX):
+        text: opg155 gene (MPOX)
+        meaning: GENEPIO:0101514
+      opg156 gene (MPOX):
+        text: opg156 gene (MPOX)
+        meaning: GENEPIO:0101515
+      opg157 gene (MPOX):
+        text: opg157 gene (MPOX)
+        meaning: GENEPIO:0101516
+      opg158 gene (MPOX):
+        text: opg158 gene (MPOX)
+        meaning: GENEPIO:0101517
+      opg159 gene (MPOX):
+        text: opg159 gene (MPOX)
+        meaning: GENEPIO:0101518
+      opg160 gene (MPOX):
+        text: opg160 gene (MPOX)
+        meaning: GENEPIO:0101519
+      opg161 gene (MPOX):
+        text: opg161 gene (MPOX)
+        meaning: GENEPIO:0101520
+      opg162 gene (MPOX):
+        text: opg162 gene (MPOX)
+        meaning: GENEPIO:0101521
+      opg163 gene (MPOX):
+        text: opg163 gene (MPOX)
+        meaning: GENEPIO:0101522
+      opg164 gene (MPOX):
+        text: opg164 gene (MPOX)
+        meaning: GENEPIO:0101523
+      opg165 gene (MPOX):
+        text: opg165 gene (MPOX)
+        meaning: GENEPIO:0101524
+      opg166 gene (MPOX):
+        text: opg166 gene (MPOX)
+        meaning: GENEPIO:0101525
+      opg167 gene (MPOX):
+        text: opg167 gene (MPOX)
+        meaning: GENEPIO:0101526
+      opg170 gene (MPOX):
+        text: opg170 gene (MPOX)
+        meaning: GENEPIO:0101527
+      opg171 gene (MPOX):
+        text: opg171 gene (MPOX)
+        meaning: GENEPIO:0101528
+      opg172 gene (MPOX):
+        text: opg172 gene (MPOX)
+        meaning: GENEPIO:0101529
+      opg173 gene (MPOX):
+        text: opg173 gene (MPOX)
+        meaning: GENEPIO:0101530
+      opg174 gene (MPOX):
+        text: opg174 gene (MPOX)
+        meaning: GENEPIO:0101531
+      opg175 gene (MPOX):
+        text: opg175 gene (MPOX)
+        meaning: GENEPIO:0101532
+      opg176 gene (MPOX):
+        text: opg176 gene (MPOX)
+        meaning: GENEPIO:0101533
+      opg178 gene (MPOX):
+        text: opg178 gene (MPOX)
+        meaning: GENEPIO:0101534
+      opg180 gene (MPOX):
+        text: opg180 gene (MPOX)
+        meaning: GENEPIO:0101535
+      opg181 gene (MPOX):
+        text: opg181 gene (MPOX)
+        meaning: GENEPIO:0101536
+      opg185 gene (MPOX):
+        text: opg185 gene (MPOX)
+        meaning: GENEPIO:0101537
+      opg187 gene (MPOX):
+        text: opg187 gene (MPOX)
+        meaning: GENEPIO:0101538
+      opg188 gene (MPOX):
+        text: opg188 gene (MPOX)
+        meaning: GENEPIO:0101539
+      opg189 gene (MPOX):
+        text: opg189 gene (MPOX)
+        meaning: GENEPIO:0101540
+      opg190 gene (MPOX):
+        text: opg190 gene (MPOX)
+        meaning: GENEPIO:0101541
+      opg191 gene (MPOX):
+        text: opg191 gene (MPOX)
+        meaning: GENEPIO:0101542
+      opg192 gene (MPOX):
+        text: opg192 gene (MPOX)
+        meaning: GENEPIO:0101543
+      opg193 gene (MPOX):
+        text: opg193 gene (MPOX)
+        meaning: GENEPIO:0101544
+      opg195 gene (MPOX):
+        text: opg195 gene (MPOX)
+        meaning: GENEPIO:0101545
+      opg197 gene (MPOX):
+        text: opg197 gene (MPOX)
+        meaning: GENEPIO:0101546
+      opg198 gene (MPOX):
+        text: opg198 gene (MPOX)
+        meaning: GENEPIO:0101547
+      opg199 gene (MPOX):
+        text: opg199 gene (MPOX)
+        meaning: GENEPIO:0101548
+      opg200 gene (MPOX):
+        text: opg200 gene (MPOX)
+        meaning: GENEPIO:0101549
+      opg204 gene (MPOX):
+        text: opg204 gene (MPOX)
+        meaning: GENEPIO:0101550
+      opg205 gene (MPOX):
+        text: opg205 gene (MPOX)
+        meaning: GENEPIO:0101551
+      opg208 gene (MPOX):
+        text: opg208 gene (MPOX)
+        meaning: GENEPIO:0101552
+      opg209 gene (MPOX):
+        text: opg209 gene (MPOX)
+        meaning: GENEPIO:0101553
+      opg210 gene (MPOX):
+        text: opg210 gene (MPOX)
+        meaning: GENEPIO:0101554
+      opg005 gene (MPOX):
+        text: opg005 gene (MPOX)
+        meaning: GENEPIO:0101555
+      opg016 gene (MPOX):
+        text: opg016 gene (MPOX)
+        meaning: GENEPIO:0101556
+  MPOXProteinNameMenu:
+    name: MPOXProteinNameMenu
+    title: Mpox protein name menu
+    permissible_values:
+      Chemokine binding protein (MPOX):
+        text: Chemokine binding protein (MPOX)
+        meaning: GENEPIO:0101557
+      Crm-B secreted TNF-alpha-receptor-like protein (MPOX):
+        text: Crm-B secreted TNF-alpha-receptor-like protein (MPOX)
+        meaning: GENEPIO:0101558
+      Ankyrin repeat protein (25) (MPOX):
+        text: Ankyrin repeat protein (25) (MPOX)
+        meaning: GENEPIO:0101559
+      Ankyrin repeat protein (39) (MPOX):
+        text: Ankyrin repeat protein (39) (MPOX)
+        meaning: GENEPIO:0101560
+      EGF-like domain protein (MPOX):
+        text: EGF-like domain protein (MPOX)
+        meaning: GENEPIO:0101561
+      Zinc finger-like protein (2) (MPOX):
+        text: Zinc finger-like protein (2) (MPOX)
+        meaning: GENEPIO:0101562
+      Interleukin-18-binding protein (MPOX):
+        text: Interleukin-18-binding protein (MPOX)
+        meaning: GENEPIO:0101563
+      Ankyrin repeat protein (2) (MPOX):
+        text: Ankyrin repeat protein (2) (MPOX)
+        meaning: GENEPIO:0101564
+      retroviral pseudoprotease-like protein (MPOX):
+        text: retroviral pseudoprotease-like protein (MPOX)
+        meaning: GENEPIO:0101565
+      Ankyrin repeat protein (14) (MPOX):
+        text: Ankyrin repeat protein (14) (MPOX)
+        meaning: GENEPIO:0101566
+      Host range protein (MPOX):
+        text: Host range protein (MPOX)
+        meaning: GENEPIO:0101567
+      Bcl-2-like protein (MPOX):
+        text: Bcl-2-like protein (MPOX)
+        meaning: GENEPIO:0101568
+      Kelch-like protein (1) (MPOX):
+        text: Kelch-like protein (1) (MPOX)
+        meaning: GENEPIO:0101569
+      C4L/C10L-like family protein (MPOX):
+        text: C4L/C10L-like family protein (MPOX)
+        meaning: GENEPIO:0101570
+      Ankyrin-like protein (1) (MPOX):
+        text: Ankyrin-like protein (1) (MPOX)
+        meaning: GENEPIO:0101571
+      NFkB inhibitor protein (MPOX):
+        text: NFkB inhibitor protein (MPOX)
+        meaning: GENEPIO:0101572
+      Ankyrin-like protein (3) (MPOX):
+        text: Ankyrin-like protein (3) (MPOX)
+        meaning: GENEPIO:0101573
+      Serpin protein (MPOX):
+        text: Serpin protein (MPOX)
+        meaning: GENEPIO:0101574
+      Phospholipase-D-like protein (MPOX):
+        text: Phospholipase-D-like protein (MPOX)
+        meaning: GENEPIO:0101575
+      Putative monoglyceride lipase protein (MPOX):
+        text: Putative monoglyceride lipase protein (MPOX)
+        meaning: GENEPIO:0101576
+      Caspase-9 inhibitor protein (MPOX):
+        text: Caspase-9 inhibitor protein (MPOX)
+        meaning: GENEPIO:0101577
+      dUTPase protein (MPOX):
+        text: dUTPase protein (MPOX)
+        meaning: GENEPIO:0101578
+      Kelch-like protein (2) (MPOX):
+        text: Kelch-like protein (2) (MPOX)
+        meaning: GENEPIO:0101579
+      Ribonucleotide reductase small subunit protein (MPOX):
+        text: Ribonucleotide reductase small subunit protein (MPOX)
+        meaning: GENEPIO:0101580
+      Telomere-binding protein I6 (1) (MPOX):
+        text: Telomere-binding protein I6 (1) (MPOX)
+        meaning: GENEPIO:0101581
+      CPXV053 protein (MPOX):
+        text: CPXV053 protein (MPOX)
+        meaning: GENEPIO:0101582
+      CPXV054 protein (MPOX):
+        text: CPXV054 protein (MPOX)
+        meaning: GENEPIO:0101583
+      Cytoplasmic protein (MPOX):
+        text: Cytoplasmic protein (MPOX)
+        meaning: GENEPIO:0101584
+      IMV membrane protein L1R (MPOX):
+        text: IMV membrane protein L1R (MPOX)
+        meaning: GENEPIO:0101585
+      Serine/threonine-protein kinase (MPOX):
+        text: Serine/threonine-protein kinase (MPOX)
+        meaning: GENEPIO:0101586
+      Protein F11 protein (MPOX):
+        text: Protein F11 protein (MPOX)
+        meaning: GENEPIO:0101587
+      EEV maturation protein (MPOX):
+        text: EEV maturation protein (MPOX)
+        meaning: GENEPIO:0101588
+      Palmytilated EEV membrane protein (MPOX):
+        text: Palmytilated EEV membrane protein (MPOX)
+        meaning: GENEPIO:0101589
+      Protein F14 (1) protein (MPOX):
+        text: Protein F14 (1) protein (MPOX)
+        meaning: GENEPIO:0101590
+      Cytochrome C oxidase protein (MPOX):
+        text: Cytochrome C oxidase protein (MPOX)
+        meaning: GENEPIO:0101591
+      Protein F15 protein (MPOX):
+        text: Protein F15 protein (MPOX)
+        meaning: GENEPIO:0101592
+      Protein F16 (1) protein (MPOX):
+        text: Protein F16 (1) protein (MPOX)
+        meaning: GENEPIO:0101593
+      DNA-binding phosphoprotein (1) (MPOX):
+        text: DNA-binding phosphoprotein (1) (MPOX)
+        meaning: GENEPIO:0101594
+      Poly(A) polymerase catalytic subunit (3) protein (MPOX):
+        text: Poly(A) polymerase catalytic subunit (3) protein (MPOX)
+        meaning: GENEPIO:0101595
+      Iev morphogenesis protein (MPOX):
+        text: Iev morphogenesis protein (MPOX)
+        meaning: GENEPIO:0101596
+      Double-stranded RNA binding protein (MPOX):
+        text: Double-stranded RNA binding protein (MPOX)
+        meaning: GENEPIO:0101597
+      DNA-directed RNA polymerase 30 kDa polypeptide protein (MPOX):
+        text: DNA-directed RNA polymerase 30 kDa polypeptide protein (MPOX)
+        meaning: GENEPIO:0101598
+      IMV membrane protein E6 (MPOX):
+        text: IMV membrane protein E6 (MPOX)
+        meaning: GENEPIO:0101599
+      Myristoylated protein E7 (MPOX):
+        text: Myristoylated protein E7 (MPOX)
+        meaning: GENEPIO:0101600
+      Membrane protein E8 (MPOX):
+        text: Membrane protein E8 (MPOX)
+        meaning: GENEPIO:0101601
+      DNA polymerase (2) protein (MPOX):
+        text: DNA polymerase (2) protein (MPOX)
+        meaning: GENEPIO:0101602
+      Sulfhydryl oxidase protein (MPOX):
+        text: Sulfhydryl oxidase protein (MPOX)
+        meaning: GENEPIO:0101603
+      Virion core protein E11 (MPOX):
+        text: Virion core protein E11 (MPOX)
+        meaning: GENEPIO:0101604
+      Glutaredoxin-1 protein (MPOX):
+        text: Glutaredoxin-1 protein (MPOX)
+        meaning: GENEPIO:0101605
+      Telomere-binding protein I1 (MPOX):
+        text: Telomere-binding protein I1 (MPOX)
+        meaning: GENEPIO:0101607
+      IMV membrane protein I2 (MPOX):
+        text: IMV membrane protein I2 (MPOX)
+        meaning: GENEPIO:0101608
+      DNA-binding phosphoprotein (2) (MPOX):
+        text: DNA-binding phosphoprotein (2) (MPOX)
+        meaning: GENEPIO:0101609
+      Ribonucleoside-diphosphate reductase (2) protein (MPOX):
+        text: Ribonucleoside-diphosphate reductase (2) protein (MPOX)
+        meaning: GENEPIO:0101610
+      IMV membrane protein I5 (MPOX):
+        text: IMV membrane protein I5 (MPOX)
+        meaning: GENEPIO:0101611
+      Telomere-binding protein (MPOX):
+        text: Telomere-binding protein (MPOX)
+        meaning: GENEPIO:0101612
+      Viral core cysteine proteinase (MPOX):
+        text: Viral core cysteine proteinase (MPOX)
+        meaning: GENEPIO:0101613
+      RNA helicase NPH-II (2) protein (MPOX):
+        text: RNA helicase NPH-II (2) protein (MPOX)
+        meaning: GENEPIO:0101614
+      Metalloendopeptidase protein (MPOX):
+        text: Metalloendopeptidase protein (MPOX)
+        meaning: GENEPIO:0101615
+      Entry/fusion complex component protein (MPOX):
+        text: Entry/fusion complex component protein (MPOX)
+        meaning: GENEPIO:0101616
+      Late transcription elongation factor protein (MPOX):
+        text: Late transcription elongation factor protein (MPOX)
+        meaning: GENEPIO:0101617
+      Glutaredoxin-2 protein (MPOX):
+        text: Glutaredoxin-2 protein (MPOX)
+        meaning: GENEPIO:0101618
+      FEN1-like nuclease protein (MPOX):
+        text: FEN1-like nuclease protein (MPOX)
+        meaning: GENEPIO:0101619
+      DNA-directed RNA polymerase 7 kDa subunit protein (MPOX):
+        text: DNA-directed RNA polymerase 7 kDa subunit protein (MPOX)
+        meaning: GENEPIO:0101620
+      Nlpc/p60 superfamily protein (MPOX):
+        text: Nlpc/p60 superfamily protein (MPOX)
+        meaning: GENEPIO:0101621
+      Assembly protein G7 (MPOX):
+        text: Assembly protein G7 (MPOX)
+        meaning: GENEPIO:0101622
+      Late transcription factor VLTF-1 protein (MPOX):
+        text: Late transcription factor VLTF-1 protein (MPOX)
+        meaning: GENEPIO:0101623
+      Myristylated protein (MPOX):
+        text: Myristylated protein (MPOX)
+        meaning: GENEPIO:0101624
+      Crescent membrane and immature virion formation protein (MPOX):
+        text: Crescent membrane and immature virion formation protein (MPOX)
+        meaning: GENEPIO:0101625
+      Internal virion L3/FP4 protein (MPOX):
+        text: Internal virion L3/FP4 protein (MPOX)
+        meaning: GENEPIO:0101626
+      Nucleic acid binding protein VP8/L4R (MPOX):
+        text: Nucleic acid binding protein VP8/L4R (MPOX)
+        meaning: GENEPIO:0101627
+      Membrane protein CL5 (MPOX):
+        text: Membrane protein CL5 (MPOX)
+        meaning: GENEPIO:0101628
+      IMV membrane protein J1 (MPOX):
+        text: IMV membrane protein J1 (MPOX)
+        meaning: GENEPIO:0101629
+      Thymidine kinase protein (MPOX):
+        text: Thymidine kinase protein (MPOX)
+        meaning: GENEPIO:0101630
+      Cap-specific mRNA protein (MPOX):
+        text: Cap-specific mRNA protein (MPOX)
+        meaning: GENEPIO:0101631
+      DNA-directed RNA polymerase subunit protein (MPOX):
+        text: DNA-directed RNA polymerase subunit protein (MPOX)
+        meaning: GENEPIO:0101632
+      DNA-dependent RNA polymerase subunit rpo147 protein (MPOX):
+        text: DNA-dependent RNA polymerase subunit rpo147 protein (MPOX)
+        meaning: GENEPIO:0101633
+      Tyr/ser protein phosphatase (MPOX):
+        text: Tyr/ser protein phosphatase (MPOX)
+        meaning: GENEPIO:0101634
+      Entry-fusion complex essential component protein (MPOX):
+        text: Entry-fusion complex essential component protein (MPOX)
+        meaning: GENEPIO:0101635
+      IMV heparin binding surface protein (MPOX):
+        text: IMV heparin binding surface protein (MPOX)
+        meaning: GENEPIO:0101636
+      RNA polymerase-associated transcription-specificity factor RAP94 protein (MPOX):
+        text: RNA polymerase-associated transcription-specificity factor RAP94 protein
+          (MPOX)
+        meaning: GENEPIO:0101637
+      Late transcription factor VLTF-4 (1) protein (MPOX):
+        text: Late transcription factor VLTF-4 (1) protein (MPOX)
+        meaning: GENEPIO:0101638
+      DNA topoisomerase type I protein (MPOX):
+        text: DNA topoisomerase type I protein (MPOX)
+        meaning: GENEPIO:0101639
+      Late protein H7 (MPOX):
+        text: Late protein H7 (MPOX)
+        meaning: GENEPIO:0101640
+      mRNA capping enzyme large subunit protein (MPOX):
+        text: mRNA capping enzyme large subunit protein (MPOX)
+        meaning: GENEPIO:0101641
+      Virion protein D2 (MPOX):
+        text: Virion protein D2 (MPOX)
+        meaning: GENEPIO:0101642
+      Virion core protein D3 (MPOX):
+        text: Virion core protein D3 (MPOX)
+        meaning: GENEPIO:0101643
+      Uracil DNA glycosylase superfamily protein (MPOX):
+        text: Uracil DNA glycosylase superfamily protein (MPOX)
+        meaning: GENEPIO:0101644
+      NTPase (1) protein (MPOX):
+        text: NTPase (1) protein (MPOX)
+        meaning: GENEPIO:0101645
+      Early transcription factor 70 kDa subunit protein (MPOX):
+        text: Early transcription factor 70 kDa subunit protein (MPOX)
+        meaning: GENEPIO:0101646
+      RNA polymerase subunit RPO18 protein (MPOX):
+        text: RNA polymerase subunit RPO18 protein (MPOX)
+        meaning: GENEPIO:0101647
+      Carbonic anhydrase protein (MPOX):
+        text: Carbonic anhydrase protein (MPOX)
+        meaning: GENEPIO:0101648
+      NUDIX domain protein (MPOX):
+        text: NUDIX domain protein (MPOX)
+        meaning: GENEPIO:0101649
+      MutT motif protein (MPOX):
+        text: MutT motif protein (MPOX)
+        meaning: GENEPIO:0101650
+      Nucleoside triphosphatase I protein (MPOX):
+        text: Nucleoside triphosphatase I protein (MPOX)
+        meaning: GENEPIO:0101651
+      mRNA capping enzyme small subunit protein (MPOX):
+        text: mRNA capping enzyme small subunit protein (MPOX)
+        meaning: GENEPIO:0101652
+      Rifampicin resistance protein (MPOX):
+        text: Rifampicin resistance protein (MPOX)
+        meaning: GENEPIO:0101653
+      Late transcription factor VLTF-2 (2) protein (MPOX):
+        text: Late transcription factor VLTF-2 (2) protein (MPOX)
+        meaning: GENEPIO:0101654
+      Late transcription factor VLTF-3 (1) protein (MPOX):
+        text: Late transcription factor VLTF-3 (1) protein (MPOX)
+        meaning: GENEPIO:0101655
+      S-S bond formation pathway protein (MPOX):
+        text: S-S bond formation pathway protein (MPOX)
+        meaning: GENEPIO:0101656
+      Virion core protein P4b (MPOX):
+        text: Virion core protein P4b (MPOX)
+        meaning: GENEPIO:0101657
+      A5L protein-like (MPOX):
+        text: A5L protein-like (MPOX)
+        meaning: GENEPIO:0101658
+      DNA-directed RNA polymerase 19 kDa subunit protein (MPOX):
+        text: DNA-directed RNA polymerase 19 kDa subunit protein (MPOX)
+        meaning: GENEPIO:0101659
+      Virion morphogenesis protein (MPOX):
+        text: Virion morphogenesis protein (MPOX)
+        meaning: GENEPIO:0101660
+      Early transcription factor 82 kDa subunit protein (MPOX):
+        text: Early transcription factor 82 kDa subunit protein (MPOX)
+        meaning: GENEPIO:0101661
+      Intermediate transcription factor VITF-3 (1) protein (MPOX):
+        text: Intermediate transcription factor VITF-3 (1) protein (MPOX)
+        meaning: GENEPIO:0101662
+      IMV membrane protein A9 (MPOX):
+        text: IMV membrane protein A9 (MPOX)
+        meaning: GENEPIO:0101663
+      Virion core protein P4a (MPOX):
+        text: Virion core protein P4a (MPOX)
+        meaning: GENEPIO:0101664
+      Viral membrane formation protein (MPOX):
+        text: Viral membrane formation protein (MPOX)
+        meaning: GENEPIO:0101665
+      A12 protein (MPOX):
+        text: A12 protein (MPOX)
+        meaning: GENEPIO:0101666
+      IMV membrane protein A13L (MPOX):
+        text: IMV membrane protein A13L (MPOX)
+        meaning: GENEPIO:0101667
+      IMV membrane protein A14 (MPOX):
+        text: IMV membrane protein A14 (MPOX)
+        meaning: GENEPIO:0101668
+      DUF1029 domain protein (MPOX):
+        text: DUF1029 domain protein (MPOX)
+        meaning: GENEPIO:0101669
+      Core protein A15 (MPOX):
+        text: Core protein A15 (MPOX)
+        meaning: GENEPIO:0101670
+      IMV membrane protein P21 (MPOX):
+        text: IMV membrane protein P21 (MPOX)
+        meaning: GENEPIO:0101671
+      DNA helicase protein (MPOX):
+        text: DNA helicase protein (MPOX)
+        meaning: GENEPIO:0101672
+      Zinc finger-like protein (1) (MPOX):
+        text: Zinc finger-like protein (1) (MPOX)
+        meaning: GENEPIO:0101673
+      IMV membrane protein A21 (MPOX):
+        text: IMV membrane protein A21 (MPOX)
+        meaning: GENEPIO:0101674
+      DNA polymerase processivity factor protein (MPOX):
+        text: DNA polymerase processivity factor protein (MPOX)
+        meaning: GENEPIO:0101675
+      Holliday junction resolvase protein (MPOX):
+        text: Holliday junction resolvase protein (MPOX)
+        meaning: GENEPIO:0101676
+      Intermediate transcription factor VITF-3 (2) protein (MPOX):
+        text: Intermediate transcription factor VITF-3 (2) protein (MPOX)
+        meaning: GENEPIO:0101677
+      DNA-dependent RNA polymerase subunit rpo132 protein (MPOX):
+        text: DNA-dependent RNA polymerase subunit rpo132 protein (MPOX)
+        meaning: GENEPIO:0101678
+      Orthopoxvirus A26L/A30L protein (MPOX):
+        text: Orthopoxvirus A26L/A30L protein (MPOX)
+        meaning: GENEPIO:0101679
+      IMV surface fusion protein (MPOX):
+        text: IMV surface fusion protein (MPOX)
+        meaning: GENEPIO:0101680
+      Envelope protein A28 homolog (MPOX):
+        text: Envelope protein A28 homolog (MPOX)
+        meaning: GENEPIO:0101681
+      DNA-directed RNA polymerase 35 kDa subunit protein (MPOX):
+        text: DNA-directed RNA polymerase 35 kDa subunit protein (MPOX)
+        meaning: GENEPIO:0101682
+      IMV membrane protein A30 (MPOX):
+        text: IMV membrane protein A30 (MPOX)
+        meaning: GENEPIO:0101683
+      A32.5L protein (MPOX):
+        text: A32.5L protein (MPOX)
+        meaning: GENEPIO:0101684
+      CPXV166 protein (MPOX):
+        text: CPXV166 protein (MPOX)
+        meaning: GENEPIO:0101685
+      ATPase A32 protein (MPOX):
+        text: ATPase A32 protein (MPOX)
+        meaning: GENEPIO:0101686
+      EEV glycoprotein (1) (MPOX):
+        text: EEV glycoprotein (1) (MPOX)
+        meaning: GENEPIO:0101687
+      EEV glycoprotein (2) (MPOX):
+        text: EEV glycoprotein (2) (MPOX)
+        meaning: GENEPIO:0101688
+      MHC class II antigen presentation inhibitor protein (MPOX):
+        text: MHC class II antigen presentation inhibitor protein (MPOX)
+        meaning: GENEPIO:0101689
+      IEV transmembrane phosphoprotein (MPOX):
+        text: IEV transmembrane phosphoprotein (MPOX)
+        meaning: GENEPIO:0101690
+      CPXV173 protein (MPOX):
+        text: CPXV173 protein (MPOX)
+        meaning: GENEPIO:0101691
+      hypothetical protein (MPOX):
+        text: hypothetical protein (MPOX)
+        meaning: GENEPIO:0101692
+      CD47-like protein (MPOX):
+        text: CD47-like protein (MPOX)
+        meaning: GENEPIO:0101693
+      Profilin domain protein (MPOX):
+        text: Profilin domain protein (MPOX)
+        meaning: GENEPIO:0101694
+      Type-I membrane glycoprotein (MPOX):
+        text: Type-I membrane glycoprotein (MPOX)
+        meaning: GENEPIO:0101695
+      MPXVgp154 protein (MPOX):
+        text: MPXVgp154 protein (MPOX)
+        meaning: GENEPIO:0101696
+      Hydroxysteroid dehydrogenase protein (MPOX):
+        text: Hydroxysteroid dehydrogenase protein (MPOX)
+        meaning: GENEPIO:0101697
+      Copper/zinc superoxide dismutase protein (MPOX):
+        text: Copper/zinc superoxide dismutase protein (MPOX)
+        meaning: GENEPIO:0101698
+      Thymidylate kinase protein (MPOX):
+        text: Thymidylate kinase protein (MPOX)
+        meaning: GENEPIO:0101699
+      DNA ligase (2) protein (MPOX):
+        text: DNA ligase (2) protein (MPOX)
+        meaning: GENEPIO:0101700
+      M137R protein (MPOX):
+        text: M137R protein (MPOX)
+        meaning: GENEPIO:0101701
+      Hemagglutinin protein (MPOX):
+        text: Hemagglutinin protein (MPOX)
+        meaning: GENEPIO:0101702
+      Ser/thr kinase protein (MPOX):
+        text: Ser/thr kinase protein (MPOX)
+        meaning: GENEPIO:0101703
+      Schlafen (1) protein (MPOX):
+        text: Schlafen (1) protein (MPOX)
+        meaning: GENEPIO:0101704
+      EEV type-I membrane glycoprotein (MPOX):
+        text: EEV type-I membrane glycoprotein (MPOX)
+        meaning: GENEPIO:0101705
+      Ankyrin-like protein (46) (MPOX):
+        text: Ankyrin-like protein (46) (MPOX)
+        meaning: GENEPIO:0101706
+      Virulence protein (MPOX):
+        text: Virulence protein (MPOX)
+        meaning: GENEPIO:0101707
+      Soluble interferon-gamma receptor-like protein (MPOX):
+        text: Soluble interferon-gamma receptor-like protein (MPOX)
+        meaning: GENEPIO:0101708
+      Intracellular viral protein (MPOX):
+        text: Intracellular viral protein (MPOX)
+        meaning: GENEPIO:0101709
+      CPXV205 protein (MPOX):
+        text: CPXV205 protein (MPOX)
+        meaning: GENEPIO:0101710
+      IFN-alpha/beta-receptor-like secreted glycoprotein (MPOX):
+        text: IFN-alpha/beta-receptor-like secreted glycoprotein (MPOX)
+        meaning: GENEPIO:0101711
+      Ankyrin repeat protein (44) (MPOX):
+        text: Ankyrin repeat protein (44) (MPOX)
+        meaning: GENEPIO:0101712
+      B22R family protein (MPOX):
+        text: B22R family protein (MPOX)
+        meaning: GENEPIO:0101713
+      Brix domain protein (MPOX):
+        text: Brix domain protein (MPOX)
+        meaning: GENEPIO:0101714
+  MPOXProteinSymbolMenu:
+    name: MPOXProteinSymbolMenu
+    title: Mpox protein symbol menu
+    permissible_values:
+      Opg001 protein (MPOX):
+        text: Opg001 protein (MPOX)
+        meaning: GENEPIO:0101720
+      Opg002 protein (MPOX):
+        text: Opg002 protein (MPOX)
+        meaning: GENEPIO:0101721
+      Opg003 protein (MPOX):
+        text: Opg003 protein (MPOX)
+        meaning: GENEPIO:0101722
+      Opg015 protein (MPOX):
+        text: Opg015 protein (MPOX)
+        meaning: GENEPIO:0101723
+      Opg019 protein (MPOX):
+        text: Opg019 protein (MPOX)
+        meaning: GENEPIO:0101724
+      Opg021 protein (MPOX):
+        text: Opg021 protein (MPOX)
+        meaning: GENEPIO:0101725
+      Opg022 protein (MPOX):
+        text: Opg022 protein (MPOX)
+        meaning: GENEPIO:0101726
+      Opg023 protein (MPOX):
+        text: Opg023 protein (MPOX)
+        meaning: GENEPIO:0101727
+      Opg024 protein (MPOX):
+        text: Opg024 protein (MPOX)
+        meaning: GENEPIO:0101728
+      Opg025 protein (MPOX):
+        text: Opg025 protein (MPOX)
+        meaning: GENEPIO:0101729
+      Opg027 protein (MPOX):
+        text: Opg027 protein (MPOX)
+        meaning: GENEPIO:0101730
+      Opg029 protein (MPOX):
+        text: Opg029 protein (MPOX)
+        meaning: GENEPIO:0101731
+      Opg030 protein (MPOX):
+        text: Opg030 protein (MPOX)
+        meaning: GENEPIO:0101732
+      Opg031 protein (MPOX):
+        text: Opg031 protein (MPOX)
+        meaning: GENEPIO:0101733
+      Opg034 protein (MPOX):
+        text: Opg034 protein (MPOX)
+        meaning: GENEPIO:0101734
+      Opg035 protein (MPOX):
+        text: Opg035 protein (MPOX)
+        meaning: GENEPIO:0101735
+      Opg037 protein (MPOX):
+        text: Opg037 protein (MPOX)
+        meaning: GENEPIO:0101736
+      Opg038 protein (MPOX):
+        text: Opg038 protein (MPOX)
+        meaning: GENEPIO:0101737
+      Opg039 protein (MPOX):
+        text: Opg039 protein (MPOX)
+        meaning: GENEPIO:0101738
+      Opg040 protein (MPOX):
+        text: Opg040 protein (MPOX)
+        meaning: GENEPIO:0101739
+      Opg042 protein (MPOX):
+        text: Opg042 protein (MPOX)
+        meaning: GENEPIO:0101740
+      Opg043 protein (MPOX):
+        text: Opg043 protein (MPOX)
+        meaning: GENEPIO:0101741
+      Opg045 protein (MPOX):
+        text: Opg045 protein (MPOX)
+        meaning: GENEPIO:0101742
+      Opg046 protein (MPOX):
+        text: Opg046 protein (MPOX)
+        meaning: GENEPIO:0101743
+      Opg047 protein (MPOX):
+        text: Opg047 protein (MPOX)
+        meaning: GENEPIO:0101744
+      Opg048 protein (MPOX):
+        text: Opg048 protein (MPOX)
+        meaning: GENEPIO:0101745
+      Opg049 protein (MPOX):
+        text: Opg049 protein (MPOX)
+        meaning: GENEPIO:0101746
+      Opg050 protein (MPOX):
+        text: Opg050 protein (MPOX)
+        meaning: GENEPIO:0101747
+      Opg051 protein (MPOX):
+        text: Opg051 protein (MPOX)
+        meaning: GENEPIO:0101748
+      Opg052 protein (MPOX):
+        text: Opg052 protein (MPOX)
+        meaning: GENEPIO:0101749
+      Opg053 protein (MPOX):
+        text: Opg053 protein (MPOX)
+        meaning: GENEPIO:0101750
+      Opg054 protein (MPOX):
+        text: Opg054 protein (MPOX)
+        meaning: GENEPIO:0101751
+      Opg055 protein (MPOX):
+        text: Opg055 protein (MPOX)
+        meaning: GENEPIO:0101752
+      Opg056 protein (MPOX):
+        text: Opg056 protein (MPOX)
+        meaning: GENEPIO:0101753
+      Opg057 protein (MPOX):
+        text: Opg057 protein (MPOX)
+        meaning: GENEPIO:0101754
+      Opg058 protein (MPOX):
+        text: Opg058 protein (MPOX)
+        meaning: GENEPIO:0101755
+      Opg059 protein (MPOX):
+        text: Opg059 protein (MPOX)
+        meaning: GENEPIO:0101756
+      Opg060 protein (MPOX):
+        text: Opg060 protein (MPOX)
+        meaning: GENEPIO:0101757
+      Opg061 protein (MPOX):
+        text: Opg061 protein (MPOX)
+        meaning: GENEPIO:0101758
+      Opg062 protein (MPOX):
+        text: Opg062 protein (MPOX)
+        meaning: GENEPIO:0101759
+      Opg063 protein (MPOX):
+        text: Opg063 protein (MPOX)
+        meaning: GENEPIO:0101760
+      Opg064 protein (MPOX):
+        text: Opg064 protein (MPOX)
+        meaning: GENEPIO:0101761
+      Opg065 protein (MPOX):
+        text: Opg065 protein (MPOX)
+        meaning: GENEPIO:0101762
+      Opg066 protein (MPOX):
+        text: Opg066 protein (MPOX)
+        meaning: GENEPIO:0101763
+      Opg068 protein (MPOX):
+        text: Opg068 protein (MPOX)
+        meaning: GENEPIO:0101764
+      Opg069 protein (MPOX):
+        text: Opg069 protein (MPOX)
+        meaning: GENEPIO:0101765
+      Opg070 protein (MPOX):
+        text: Opg070 protein (MPOX)
+        meaning: GENEPIO:0101766
+      Opg071 protein (MPOX):
+        text: Opg071 protein (MPOX)
+        meaning: GENEPIO:0101767
+      Opg072 protein (MPOX):
+        text: Opg072 protein (MPOX)
+        meaning: GENEPIO:0101768
+      Opg073 protein (MPOX):
+        text: Opg073 protein (MPOX)
+        meaning: GENEPIO:0101769
+      Opg074 protein (MPOX):
+        text: Opg074 protein (MPOX)
+        meaning: GENEPIO:0101770
+      Opg075 protein (MPOX):
+        text: Opg075 protein (MPOX)
+        meaning: GENEPIO:0101771
+      Opg077 protein (MPOX):
+        text: Opg077 protein (MPOX)
+        meaning: GENEPIO:0101772
+      Opg078 protein (MPOX):
+        text: Opg078 protein (MPOX)
+        meaning: GENEPIO:0101773
+      Opg079 protein (MPOX):
+        text: Opg079 protein (MPOX)
+        meaning: GENEPIO:0101774
+      Opg080 protein (MPOX):
+        text: Opg080 protein (MPOX)
+        meaning: GENEPIO:0101775
+      Opg081 protein (MPOX):
+        text: Opg081 protein (MPOX)
+        meaning: GENEPIO:0101776
+      Opg082 protein (MPOX):
+        text: Opg082 protein (MPOX)
+        meaning: GENEPIO:0101777
+      Opg083 protein (MPOX):
+        text: Opg083 protein (MPOX)
+        meaning: GENEPIO:0101778
+      Opg084 protein (MPOX):
+        text: Opg084 protein (MPOX)
+        meaning: GENEPIO:0101779
+      Opg085 protein (MPOX):
+        text: Opg085 protein (MPOX)
+        meaning: GENEPIO:0101780
+      Opg086 protein (MPOX):
+        text: Opg086 protein (MPOX)
+        meaning: GENEPIO:0101781
+      Opg087 protein (MPOX):
+        text: Opg087 protein (MPOX)
+        meaning: GENEPIO:0101782
+      Opg088 protein (MPOX):
+        text: Opg088 protein (MPOX)
+        meaning: GENEPIO:0101783
+      Opg089 protein (MPOX):
+        text: Opg089 protein (MPOX)
+        meaning: GENEPIO:0101784
+      Opg090 protein (MPOX):
+        text: Opg090 protein (MPOX)
+        meaning: GENEPIO:0101785
+      Opg091 protein (MPOX):
+        text: Opg091 protein (MPOX)
+        meaning: GENEPIO:0101786
+      Opg092 protein (MPOX):
+        text: Opg092 protein (MPOX)
+        meaning: GENEPIO:0101787
+      Opg093 protein (MPOX):
+        text: Opg093 protein (MPOX)
+        meaning: GENEPIO:0101788
+      Opg094 protein (MPOX):
+        text: Opg094 protein (MPOX)
+        meaning: GENEPIO:0101789
+      Opg095 protein (MPOX):
+        text: Opg095 protein (MPOX)
+        meaning: GENEPIO:0101790
+      Opg096 protein (MPOX):
+        text: Opg096 protein (MPOX)
+        meaning: GENEPIO:0101791
+      Opg097 protein (MPOX):
+        text: Opg097 protein (MPOX)
+        meaning: GENEPIO:0101792
+      Opg098 protein (MPOX):
+        text: Opg098 protein (MPOX)
+        meaning: GENEPIO:0101793
+      Opg099 protein (MPOX):
+        text: Opg099 protein (MPOX)
+        meaning: GENEPIO:0101794
+      Opg100 protein (MPOX):
+        text: Opg100 protein (MPOX)
+        meaning: GENEPIO:0101795
+      Opg101 protein (MPOX):
+        text: Opg101 protein (MPOX)
+        meaning: GENEPIO:0101796
+      Opg102 protein (MPOX):
+        text: Opg102 protein (MPOX)
+        meaning: GENEPIO:0101797
+      Opg103 protein (MPOX):
+        text: Opg103 protein (MPOX)
+        meaning: GENEPIO:0101798
+      Opg104 protein (MPOX):
+        text: Opg104 protein (MPOX)
+        meaning: GENEPIO:0101799
+      Opg105 protein (MPOX):
+        text: Opg105 protein (MPOX)
+        meaning: GENEPIO:0101800
+      Opg106 protein (MPOX):
+        text: Opg106 protein (MPOX)
+        meaning: GENEPIO:0101801
+      Opg107 protein (MPOX):
+        text: Opg107 protein (MPOX)
+        meaning: GENEPIO:0101802
+      Opg108 protein (MPOX):
+        text: Opg108 protein (MPOX)
+        meaning: GENEPIO:0101803
+      Opg109 protein (MPOX):
+        text: Opg109 protein (MPOX)
+        meaning: GENEPIO:0101804
+      Opg110 protein (MPOX):
+        text: Opg110 protein (MPOX)
+        meaning: GENEPIO:0101805
+      Opg111 protein (MPOX):
+        text: Opg111 protein (MPOX)
+        meaning: GENEPIO:0101806
+      Opg112 protein (MPOX):
+        text: Opg112 protein (MPOX)
+        meaning: GENEPIO:0101807
+      Opg113 protein (MPOX):
+        text: Opg113 protein (MPOX)
+        meaning: GENEPIO:0101808
+      Opg114 protein (MPOX):
+        text: Opg114 protein (MPOX)
+        meaning: GENEPIO:0101809
+      Opg115 protein (MPOX):
+        text: Opg115 protein (MPOX)
+        meaning: GENEPIO:0101810
+      Opg116 protein (MPOX):
+        text: Opg116 protein (MPOX)
+        meaning: GENEPIO:0101811
+      Opg117 protein (MPOX):
+        text: Opg117 protein (MPOX)
+        meaning: GENEPIO:0101812
+      Opg118 protein (MPOX):
+        text: Opg118 protein (MPOX)
+        meaning: GENEPIO:0101813
+      Opg119 protein (MPOX):
+        text: Opg119 protein (MPOX)
+        meaning: GENEPIO:0101814
+      Opg120 protein (MPOX):
+        text: Opg120 protein (MPOX)
+        meaning: GENEPIO:0101815
+      Opg121 protein (MPOX):
+        text: Opg121 protein (MPOX)
+        meaning: GENEPIO:0101816
+      Opg122 protein (MPOX):
+        text: Opg122 protein (MPOX)
+        meaning: GENEPIO:0101817
+      Opg123 protein (MPOX):
+        text: Opg123 protein (MPOX)
+        meaning: GENEPIO:0101818
+      Opg124 protein (MPOX):
+        text: Opg124 protein (MPOX)
+        meaning: GENEPIO:0101819
+      Opg125 protein (MPOX):
+        text: Opg125 protein (MPOX)
+        meaning: GENEPIO:0101820
+      Opg126 protein (MPOX):
+        text: Opg126 protein (MPOX)
+        meaning: GENEPIO:0101821
+      Opg127 protein (MPOX):
+        text: Opg127 protein (MPOX)
+        meaning: GENEPIO:0101822
+      Opg128 protein (MPOX):
+        text: Opg128 protein (MPOX)
+        meaning: GENEPIO:0101823
+      Opg129 protein (MPOX):
+        text: Opg129 protein (MPOX)
+        meaning: GENEPIO:0101824
+      Opg130 protein (MPOX):
+        text: Opg130 protein (MPOX)
+        meaning: GENEPIO:0101825
+      Opg131 protein (MPOX):
+        text: Opg131 protein (MPOX)
+        meaning: GENEPIO:0101826
+      Opg132 protein (MPOX):
+        text: Opg132 protein (MPOX)
+        meaning: GENEPIO:0101827
+      Opg133 protein (MPOX):
+        text: Opg133 protein (MPOX)
+        meaning: GENEPIO:0101828
+      Opg134 protein (MPOX):
+        text: Opg134 protein (MPOX)
+        meaning: GENEPIO:0101829
+      Opg135 protein (MPOX):
+        text: Opg135 protein (MPOX)
+        meaning: GENEPIO:0101830
+      Opg136 protein (MPOX):
+        text: Opg136 protein (MPOX)
+        meaning: GENEPIO:0101831
+      Opg137 protein (MPOX):
+        text: Opg137 protein (MPOX)
+        meaning: GENEPIO:0101832
+      Opg138 protein (MPOX):
+        text: Opg138 protein (MPOX)
+        meaning: GENEPIO:0101833
+      Opg139 protein (MPOX):
+        text: Opg139 protein (MPOX)
+        meaning: GENEPIO:0101834
+      Opg140 protein (MPOX):
+        text: Opg140 protein (MPOX)
+        meaning: GENEPIO:0101835
+      Opg141 protein (MPOX):
+        text: Opg141 protein (MPOX)
+        meaning: GENEPIO:0101836
+      Opg142 protein (MPOX):
+        text: Opg142 protein (MPOX)
+        meaning: GENEPIO:0101837
+      Opg143 protein (MPOX):
+        text: Opg143 protein (MPOX)
+        meaning: GENEPIO:0101838
+      Opg144 protein (MPOX):
+        text: Opg144 protein (MPOX)
+        meaning: GENEPIO:0101839
+      Opg145 protein (MPOX):
+        text: Opg145 protein (MPOX)
+        meaning: GENEPIO:0101840
+      Opg146 protein (MPOX):
+        text: Opg146 protein (MPOX)
+        meaning: GENEPIO:0101841
+      Opg147 protein (MPOX):
+        text: Opg147 protein (MPOX)
+        meaning: GENEPIO:0101842
+      Opg148 protein (MPOX):
+        text: Opg148 protein (MPOX)
+        meaning: GENEPIO:0101843
+      Opg149 protein (MPOX):
+        text: Opg149 protein (MPOX)
+        meaning: GENEPIO:0101844
+      Opg150 protein (MPOX):
+        text: Opg150 protein (MPOX)
+        meaning: GENEPIO:0101845
+      Opg151 protein (MPOX):
+        text: Opg151 protein (MPOX)
+        meaning: GENEPIO:0101846
+      Opg153 protein (MPOX):
+        text: Opg153 protein (MPOX)
+        meaning: GENEPIO:0101847
+      Opg154 protein (MPOX):
+        text: Opg154 protein (MPOX)
+        meaning: GENEPIO:0101848
+      Opg155 protein (MPOX):
+        text: Opg155 protein (MPOX)
+        meaning: GENEPIO:0101849
+      Opg156 protein (MPOX):
+        text: Opg156 protein (MPOX)
+        meaning: GENEPIO:0101850
+      Opg157 protein (MPOX):
+        text: Opg157 protein (MPOX)
+        meaning: GENEPIO:0101851
+      Opg158 protein (MPOX):
+        text: Opg158 protein (MPOX)
+        meaning: GENEPIO:0101852
+      Opg159 protein (MPOX):
+        text: Opg159 protein (MPOX)
+        meaning: GENEPIO:0101853
+      Opg160 protein (MPOX):
+        text: Opg160 protein (MPOX)
+        meaning: GENEPIO:0101854
+      Opg161 protein (MPOX):
+        text: Opg161 protein (MPOX)
+        meaning: GENEPIO:0101855
+      Opg162 protein (MPOX):
+        text: Opg162 protein (MPOX)
+        meaning: GENEPIO:0101856
+      Opg163 protein (MPOX):
+        text: Opg163 protein (MPOX)
+        meaning: GENEPIO:0101857
+      Opg164 protein (MPOX):
+        text: Opg164 protein (MPOX)
+        meaning: GENEPIO:0101858
+      Opg165 protein (MPOX):
+        text: Opg165 protein (MPOX)
+        meaning: GENEPIO:0101859
+      Opg166 protein (MPOX):
+        text: Opg166 protein (MPOX)
+        meaning: GENEPIO:0101860
+      Opg167 protein (MPOX):
+        text: Opg167 protein (MPOX)
+        meaning: GENEPIO:0101861
+      Opg170 protein (MPOX):
+        text: Opg170 protein (MPOX)
+        meaning: GENEPIO:0101862
+      Opg171 protein (MPOX):
+        text: Opg171 protein (MPOX)
+        meaning: GENEPIO:0101863
+      Opg172 protein (MPOX):
+        text: Opg172 protein (MPOX)
+        meaning: GENEPIO:0101864
+      Opg173 protein (MPOX):
+        text: Opg173 protein (MPOX)
+        meaning: GENEPIO:0101865
+      Opg174 protein (MPOX):
+        text: Opg174 protein (MPOX)
+        meaning: GENEPIO:0101866
+      Opg175 protein (MPOX):
+        text: Opg175 protein (MPOX)
+        meaning: GENEPIO:0101867
+      Opg176 protein (MPOX):
+        text: Opg176 protein (MPOX)
+        meaning: GENEPIO:0101868
+      Opg178 protein (MPOX):
+        text: Opg178 protein (MPOX)
+        meaning: GENEPIO:0101869
+      Opg180 protein (MPOX):
+        text: Opg180 protein (MPOX)
+        meaning: GENEPIO:0101870
+      Opg181 protein (MPOX):
+        text: Opg181 protein (MPOX)
+        meaning: GENEPIO:0101871
+      Opg185 protein (MPOX):
+        text: Opg185 protein (MPOX)
+        meaning: GENEPIO:0101872
+      Opg187 protein (MPOX):
+        text: Opg187 protein (MPOX)
+        meaning: GENEPIO:0101873
+      Opg188 protein (MPOX):
+        text: Opg188 protein (MPOX)
+        meaning: GENEPIO:0101874
+      Opg189 protein (MPOX):
+        text: Opg189 protein (MPOX)
+        meaning: GENEPIO:0101875
+      Opg190 protein (MPOX):
+        text: Opg190 protein (MPOX)
+        meaning: GENEPIO:0101876
+      Opg191 protein (MPOX):
+        text: Opg191 protein (MPOX)
+        meaning: GENEPIO:0101877
+      Opg192 protein (MPOX):
+        text: Opg192 protein (MPOX)
+        meaning: GENEPIO:0101878
+      Opg193 protein (MPOX):
+        text: Opg193 protein (MPOX)
+        meaning: GENEPIO:0101879
+      Opg195 protein (MPOX):
+        text: Opg195 protein (MPOX)
+        meaning: GENEPIO:0101880
+      Opg197 protein (MPOX):
+        text: Opg197 protein (MPOX)
+        meaning: GENEPIO:0101881
+      Opg198 protein (MPOX):
+        text: Opg198 protein (MPOX)
+        meaning: GENEPIO:0101882
+      Opg199 protein (MPOX):
+        text: Opg199 protein (MPOX)
+        meaning: GENEPIO:0101883
+      Opg200 protein (MPOX):
+        text: Opg200 protein (MPOX)
+        meaning: GENEPIO:0101884
+      Opg204 protein (MPOX):
+        text: Opg204 protein (MPOX)
+        meaning: GENEPIO:0101885
+      Opg205 protein (MPOX):
+        text: Opg205 protein (MPOX)
+        meaning: GENEPIO:0101886
+      Opg208 protein (MPOX):
+        text: Opg208 protein (MPOX)
+        meaning: GENEPIO:0101887
+      Opg209 protein (MPOX):
+        text: Opg209 protein (MPOX)
+        meaning: GENEPIO:0101888
+      Opg210 protein (MPOX):
+        text: Opg210 protein (MPOX)
+        meaning: GENEPIO:0101889
+      Opg005 protein (MPOX):
+        text: Opg005 protein (MPOX)
+        meaning: GENEPIO:0101890
+      Opg016 protein (MPOX):
+        text: Opg016 protein (MPOX)
+        meaning: GENEPIO:0101891
+types:
+  WhitespaceMinimizedString:
+    name: WhitespaceMinimizedString
+    typeof: string
+    description: 'A string that has all whitespace trimmed off of beginning and end,
+      and all internal whitespace segments reduced to single spaces. Whitespace includes
+      #x9 (tab), #xA (linefeed), and #xD (carriage return).'
+    base: str
+    uri: xsd:token
+  Provenance:
+    name: Provenance
+    typeof: string
+    description: A field containing a DataHarmonizer versioning marker. It is issued
+      by DataHarmonizer when validation is applied to a given row of data.
+    base: str
+    uri: xsd:token
+settings:
+  Title_Case: (((?<=\b)[^a-z\W]\w*?|[\W])+)
+  UPPER_CASE: '[A-Z\W\d_]*'
+  lower_case: '[a-z\W\d_]*'
