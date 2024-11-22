@@ -31,7 +31,7 @@ jobs:
           docker run --rm \
             -v ${{ github.workspace }}:/workspace \
             python:3.9-slim bash -c "pip install pandas==1.4.3 numpy==1.21.0 && \
-            python /workspace/scripts/functional_annotation.py \
+            python /workspace/scripts/convert_pokay_to_virusmvp.py \
               --inputdir /workspace/data/literature/NC_045512/ \
               --accession NC_045512.2 \
               --outputfile /workspace/NC_045512_pokay.tsv \
